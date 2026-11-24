@@ -1,0 +1,3320 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Standardele ANMCS Ediția a III-a — Infografic Interactiv &amp; Fișă Autoevaluare (M.Of. 808 bis / 2026)</title>
+  <style>
+    /* =========================================================================
+       DESIGN TOKENS & RESET (100% CSS NATIV, FĂRĂ DEPENDENȚE EXTERNE)
+       ========================================================================= */
+    :root {
+      --teal: #0F766E;
+      --teal-alt: #0D7C7B;
+      --teal-dark: #115E59;
+      --teal-deep: #0B4F4A;
+      --blue: #0284C7;
+      --blue-soft: #E0F2FE;
+      --mint: #E6F4F1;
+      --mint-light: #F2FAF8;
+      --emerald: #059669;
+      --emerald-soft: #D1FAE5;
+      --indigo: #4F46E5;
+      --indigo-soft: #E0E7FF;
+      --coral: #DC2626;
+      --coral-soft: #FEE2E2;
+      --amber: #D97706;
+      --amber-soft: #FEF3C7;
+      --bg: #F8FAFC;
+      --surface: #FFFFFF;
+      --border: #E2E8F0;
+      --border-teal: #CCE4E1;
+      --text: #0F172A;
+      --text-muted: #475569;
+      --text-light: #64748B;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 2px 8px rgba(15, 118, 110, 0.06);
+      --shadow-md: 0 8px 24px -4px rgba(15, 118, 110, 0.10), 0 2px 6px rgba(2, 132, 199, 0.05);
+      --shadow-lg: 0 14px 32px -6px rgba(15, 118, 110, 0.15);
+      --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+    }
+
+    p { margin: 0; }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    /* =========================================================================
+       HERO BANNER
+       ========================================================================= */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal) 52%, var(--blue) 100%);
+      color: #FFFFFF;
+      padding: 36px 0 42px;
+    }
+
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.09;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.25fr 0.9fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: #F0FDFA;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.65rem, 3.2vw, 2.5rem);
+      font-weight: 800;
+    }
+
+    .hero-sub {
+      display: block;
+      font-size: clamp(1.1rem, 2vw, 1.55rem);
+      font-weight: 700;
+      color: #99F6E4;
+      margin-top: 4px;
+    }
+
+    .hero-desc {
+      margin-top: 14px;
+      font-size: 15px;
+      color: rgba(240, 253, 250, 0.94);
+      max-width: 640px;
+    }
+
+    .hero-actions {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-white {
+      background: #FFFFFF;
+      color: var(--teal);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .btn-white:hover {
+      background: #F0FDFA;
+    }
+
+    .btn-glass {
+      background: rgba(255, 255, 255, 0.15);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-glass:hover {
+      background: rgba(255, 255, 255, 0.24);
+    }
+
+    .btn-teal {
+      background: var(--teal);
+      color: #FFFFFF;
+    }
+
+    .btn-teal:hover {
+      background: var(--teal-dark);
+    }
+
+    .btn-outline {
+      background: #FFFFFF;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      background: #F1F5F9;
+      border-color: #CBD5E1;
+    }
+
+    .btn-danger-outline {
+      background: #FFFFFF;
+      color: var(--coral);
+      border: 1px solid #FECACA;
+    }
+
+    .btn-danger-outline:hover {
+      background: #FEF2F2;
+    }
+
+    .btn-sm {
+      padding: 7px 12px;
+      font-size: 12.5px;
+      border-radius: 9px;
+    }
+
+    .hero-visual {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+    }
+
+    .hero-visual-caption {
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11.5px;
+      color: #CCFBF1;
+      padding: 0 4px;
+    }
+
+    @keyframes ekgPulse {
+      0% { stroke-dashoffset: 600; opacity: 0.4; }
+      50% { opacity: 0.95; }
+      100% { stroke-dashoffset: 0; opacity: 0.4; }
+    }
+    .ekg-line {
+      stroke-dasharray: 600;
+      animation: ekgPulse 5s ease-in-out infinite;
+    }
+
+    /* =========================================================================
+       STICKY NAVIGATION TABS
+       ========================================================================= */
+    .tabs-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-teal);
+      box-shadow: 0 2px 10px rgba(15, 118, 110, 0.05);
+    }
+
+    .tabs-list {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 10px 0;
+      scrollbar-width: none;
+    }
+    .tabs-list::-webkit-scrollbar { display: none; }
+
+    .tab-btn {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 14px;
+      border-radius: 11px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 13.5px;
+      font-weight: 600;
+      transition: all 0.18s ease;
+    }
+
+    .tab-btn:hover {
+      background: var(--mint-light);
+      color: var(--teal);
+    }
+
+    .tab-btn.active {
+      background: var(--teal);
+      color: #FFFFFF;
+      box-shadow: 0 3px 10px rgba(15, 118, 110, 0.25);
+    }
+
+    .tab-btn.tab-fae:not(.active) {
+      background: #ECFDF5;
+      color: #065F46;
+      border-color: #A7F3D0;
+    }
+
+    .tab-btn.tab-fae:not(.active):hover {
+      background: #D1FAE5;
+    }
+
+    .tab-pill {
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      background: rgba(15, 118, 110, 0.12);
+      color: var(--teal);
+    }
+
+    .tab-btn.active .tab-pill {
+      background: rgba(255, 255, 255, 0.22);
+      color: #FFFFFF;
+    }
+
+    /* =========================================================================
+       MAIN CONTENT & COMMON CARDS
+       ========================================================================= */
+    main {
+      padding: 28px 0 48px;
+    }
+
+    .tab-panel {
+      display: none;
+      animation: fadeSlide 0.24s ease-out;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--border-teal);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 700;
+      background: var(--mint);
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+
+    .eyebrow-blue { background: var(--blue-soft); color: #0369A1; }
+    .eyebrow-coral { background: var(--coral-soft); color: #B91C1C; }
+    .eyebrow-amber { background: var(--amber-soft); color: #B45309; }
+    .eyebrow-emerald { background: var(--emerald-soft); color: #047857; }
+
+    .section-title {
+      font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 5px;
+    }
+
+    .page-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 8px;
+      background: #F1F5F9;
+      color: #334155;
+      font-size: 11.5px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    /* =========================================================================
+       TAB 1: KPI GRID, HIERARCHY & NOVELTIES
+       ========================================================================= */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--teal);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .kpi-card.blue { border-top-color: var(--blue); }
+    .kpi-card.emerald { border-top-color: var(--emerald); }
+    .kpi-card.indigo { border-top-color: var(--indigo); }
+    .kpi-card.amber { border-top-color: var(--amber); }
+    .kpi-card.coral { border-top-color: var(--coral); }
+
+    .kpi-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-light);
+    }
+
+    .kpi-value {
+      font-size: 30px;
+      font-weight: 800;
+      margin: 6px 0 4px;
+      color: var(--text);
+    }
+
+    .kpi-note {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .hierarchy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .hierarchy-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hier-btn {
+      width: 100%;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 13px 15px;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--border);
+      background: #F8FAFC;
+      transition: all 0.16s ease;
+    }
+
+    .hier-btn:hover {
+      background: #FFFFFF;
+      border-color: var(--teal);
+    }
+
+    .hier-btn.active {
+      background: var(--mint-light);
+      border-color: var(--teal);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hier-code {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      color: #FFFFFF;
+      flex-shrink: 0;
+    }
+
+    .hier-detail {
+      background: linear-gradient(145deg, var(--mint-light), #F0F9FF);
+      border: 1px solid var(--border-teal);
+      border-radius: var(--radius-md);
+      padding: 22px;
+    }
+
+    .hier-example {
+      margin-top: 16px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-teal);
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .cards-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .cards-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: box-shadow 0.18s ease, transform 0.18s ease;
+    }
+
+    .feature-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* =========================================================================
+       TAB 2: EXPLORATOR STANDARDE
+       ========================================================================= */
+    .search-bar-wrap {
+      position: relative;
+      margin-bottom: 12px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 12px 40px 12px 42px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: #F8FAFC;
+      font-size: 14px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+    }
+
+    .search-input:focus {
+      background: #FFFFFF;
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.14);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+      pointer-events: none;
+    }
+
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .filter-btn {
+      padding: 8px 13px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #F8FAFC;
+      color: var(--text-muted);
+      font-size: 12.5px;
+      font-weight: 600;
+      transition: all 0.15s;
+    }
+
+    .filter-btn:hover {
+      background: var(--mint-light);
+      color: var(--teal);
+      border-color: var(--border-teal);
+    }
+
+    .filter-btn.active {
+      background: var(--teal);
+      color: #FFFFFF;
+      border-color: var(--teal);
+    }
+
+    .std-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .std-card:hover {
+      border-color: var(--border-teal);
+      box-shadow: var(--shadow-md);
+    }
+
+    .std-card.open {
+      border-color: var(--teal);
+    }
+
+    .std-card-head {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: none;
+      padding: 18px;
+      display: block;
+    }
+
+    .std-card-body {
+      border-top: 1px solid var(--border-teal);
+      background: #F8FCFB;
+      padding: 15px 18px;
+      font-size: 13px;
+      color: #334155;
+    }
+
+    .std-card-body ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+
+    .std-card-body li {
+      margin-bottom: 6px;
+    }
+
+    .badge-chip {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 10.5px;
+      font-weight: 700;
+    }
+
+    /* =========================================================================
+       TAB 3: STEPPER 8 ETAPE
+       ========================================================================= */
+    .stepper-nav {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .step-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 11px 6px;
+      border-radius: 13px;
+      border: 2px solid var(--border);
+      background: #F8FAFC;
+      transition: all 0.16s;
+    }
+
+    .step-btn:hover {
+      border-color: var(--teal);
+      background: #FFFFFF;
+    }
+
+    .step-btn.active {
+      border-color: var(--teal);
+      background: var(--mint);
+    }
+
+    .step-btn.done {
+      border-color: #A7F3D0;
+      background: #ECFDF5;
+    }
+
+    .step-num {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 12.5px;
+      background: #E2E8F0;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+
+    .step-btn.active .step-num {
+      background: var(--teal);
+      color: #FFFFFF;
+    }
+
+    .step-btn.done .step-num {
+      background: var(--emerald);
+      color: #FFFFFF;
+    }
+
+    .stage-detail-box {
+      background: linear-gradient(150deg, #F8FCFB 0%, #F0F9FF 100%);
+      border: 1px solid var(--border-teal);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+
+    /* =========================================================================
+       TAB 4: VALENȚE, TEHNICI & ALERTE CRITICE
+       ========================================================================= */
+    .valence-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .valence-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 11px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #F8FAFC;
+      font-size: 12px;
+    }
+
+    .valence-code {
+      padding: 4px 8px;
+      border-radius: 7px;
+      font-weight: 800;
+      font-size: 12px;
+      color: #FFFFFF;
+      flex-shrink: 0;
+    }
+
+    .alert-panel {
+      background: linear-gradient(145deg, #FFF5F5, #FFFFFF);
+      border: 2px solid #FECACA;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
+
+    .warn-panel {
+      background: linear-gradient(145deg, #FFFBEB, #FFFFFF);
+      border: 2px solid #FDE68A;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
+
+    .alert-list {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .alert-list li {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      background: #FFFFFF;
+      border: 1px solid #FEE2E2;
+      border-radius: 11px;
+      padding: 11px 13px;
+      font-size: 13.5px;
+    }
+
+    .alert-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--coral);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* =========================================================================
+       TAB 5: HARTA PDF & ACRONIME
+       ========================================================================= */
+    .pdf-bar {
+      display: flex;
+      height: 15px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #E2E8F0;
+      margin-bottom: 14px;
+    }
+
+    .pdf-map-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .pdf-card {
+      text-align: left;
+      background: #FAFDFD;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.16s;
+    }
+
+    .pdf-card:hover {
+      border-color: var(--teal);
+      background: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* =========================================================================
+       TAB 6: FIȘĂ AUTOEVALUARE (FAE) — INSTRUMENT INTERACTIV
+       ========================================================================= */
+    .fae-note {
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      border-left: 4px solid var(--blue);
+      border-radius: 12px;
+      padding: 13px 16px;
+      font-size: 13px;
+      color: #1E3A8A;
+      margin-bottom: 20px;
+    }
+
+    .fae-meta-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr 1.1fr;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 9px 12px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      background: #F8FAFC;
+      font-size: 13.5px;
+      color: var(--text);
+      outline: none;
+    }
+
+    .form-input:focus {
+      background: #FFFFFF;
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+    }
+
+    .fae-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Panou Rezumat Live (Semafor + Ring + Bare R01/R02/R03) */
+    .fae-dashboard {
+      background: var(--surface);
+      border: 2px solid var(--border-teal);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr 1.15fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .semafor-box {
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      border: 1.5px solid transparent;
+    }
+
+    .semafor-green { background: #ECFDF5; border-color: #6EE7B7; color: #065F46; }
+    .semafor-amber { background: #FFFBEB; border-color: #FCD34D; color: #92400E; }
+    .semafor-red   { background: #FEF2F2; border-color: #FCA5A5; color: #991B1B; }
+
+    .semafor-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 3px;
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.8);
+    }
+
+    .semafor-green .semafor-dot { background: #10B981; }
+    .semafor-amber .semafor-dot { background: #F59E0B; }
+    .semafor-red .semafor-dot   { background: #DC2626; }
+
+    .ring-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .progress-bar-bg {
+      height: 8px;
+      border-radius: 999px;
+      background: #E2E8F0;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+
+    /* Pasul 1: Condiții obligatorii */
+    .cond-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .cond-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 13px 15px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: #F8FAFC;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .cond-item.checked {
+      background: #F0FDF4;
+      border-color: #86EFAC;
+    }
+
+    .cond-item.unchecked {
+      background: #FFF5F5;
+      border-color: #FECACA;
+    }
+
+    .cond-item input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--teal);
+      margin-top: 2px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    /* Pasul 2: Situații Critice */
+    .crit-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 15px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: #F8FAFC;
+      margin-bottom: 10px;
+      transition: all 0.15s;
+    }
+
+    .crit-row.is-alert {
+      background: #FEF2F2;
+      border-color: #F87171;
+    }
+
+    .crit-row.is-ok {
+      background: #F0FDF4;
+      border-color: #BBF7D0;
+    }
+
+    .crit-toggle {
+      display: inline-flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .crit-btn {
+      padding: 7px 12px;
+      border-radius: 9px;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1.5px solid var(--border);
+      background: #FFFFFF;
+      color: var(--text-muted);
+      transition: all 0.15s;
+    }
+
+    .crit-btn.ok-active {
+      background: var(--emerald);
+      color: #FFFFFF;
+      border-color: var(--emerald);
+    }
+
+    .crit-btn.alert-active {
+      background: var(--coral);
+      color: #FFFFFF;
+      border-color: var(--coral);
+    }
+
+    /* Pasul 3: Standarde FAE */
+    .fae-std-row {
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      background: #FFFFFF;
+      margin-bottom: 12px;
+      transition: border-color 0.15s;
+    }
+
+    .fae-std-row.val-C   { border-left: 5px solid var(--emerald); }
+    .fae-std-row.val-CP  { border-left: 5px solid var(--amber); }
+    .fae-std-row.val-NC  { border-left: 5px solid var(--coral); background: #FFFAFA; }
+    .fae-std-row.val-DI  { border-left: 5px solid #EA580C; background: #FFFBF7; }
+    .fae-std-row.val-NA  { border-left: 5px solid #94A3B8; background: #F8FAFC; opacity: 0.85; }
+
+    .fae-std-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .val-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .val-btn {
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      background: #F8FAFC;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 700;
+      transition: all 0.14s;
+    }
+
+    .val-btn:hover { background: #E2E8F0; }
+    .val-btn.active-C  { background: var(--emerald); color: #fff; border-color: var(--emerald); }
+    .val-btn.active-CP { background: var(--amber);   color: #fff; border-color: var(--amber); }
+    .val-btn.active-NC { background: var(--coral);   color: #fff; border-color: var(--coral); }
+    .val-btn.active-DI { background: #EA580C;        color: #fff; border-color: #EA580C; }
+    .val-btn.active-NA { background: #64748B;        color: #fff; border-color: #64748B; }
+
+    .em-checks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 11px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+      align-items: center;
+    }
+
+    .em-check-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    .em-check-label input {
+      accent-color: var(--teal);
+      width: 15px;
+      height: 15px;
+    }
+
+    .fae-notes-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 0.8fr;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .fae-mini-input {
+      padding: 7px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 12.5px;
+      background: #F8FAFC;
+      color: var(--text);
+      width: 100%;
+    }
+
+    .fae-mini-input:focus {
+      outline: none;
+      border-color: var(--teal);
+      background: #FFFFFF;
+    }
+
+    /* Pasul 4: Tabel Plan de Măsuri */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+    }
+
+    .plan-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: left;
+    }
+
+    .plan-table th {
+      background: var(--mint);
+      color: var(--teal-deep);
+      font-weight: 700;
+      padding: 11px 13px;
+      border-bottom: 1px solid var(--border-teal);
+      white-space: nowrap;
+    }
+
+    .plan-table td {
+      padding: 11px 13px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .plan-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .prio-badge {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .prio-crit { background: var(--coral-soft); color: #991B1B; }
+    .prio-high { background: #FFEDD5; color: #9A3412; }
+    .prio-med  { background: var(--amber-soft); color: #92400E; }
+
+    /* Toast & Inline Confirmation Modal (fără alert/confirm!) */
+    .toast {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 100;
+      background: var(--teal-deep);
+      color: #FFFFFF;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-size: 13.5px;
+      font-weight: 600;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: all 0.25s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 120;
+      background: rgba(15, 23, 42, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      max-width: 440px;
+      width: 100%;
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Footer */
+    footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-teal);
+      padding: 22px 0;
+      font-size: 12.5px;
+      color: var(--text-light);
+    }
+
+    /* =========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================= */
+    @media (max-width: 1080px) {
+      .kpi-grid { grid-template-columns: repeat(3, 1fr); }
+      .stepper-nav { grid-template-columns: repeat(4, 1fr); }
+      .pdf-map-grid { grid-template-columns: repeat(2, 1fr); }
+      .fae-dashboard { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 860px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hierarchy-grid { grid-template-columns: 1fr; }
+      .cards-3 { grid-template-columns: 1fr; }
+      .cards-2 { grid-template-columns: 1fr; }
+      .cards-4 { grid-template-columns: repeat(2, 1fr); }
+      .valence-grid { grid-template-columns: repeat(2, 1fr); }
+      .fae-meta-grid { grid-template-columns: 1fr; }
+      .fae-notes-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      .stepper-nav { grid-template-columns: repeat(2, 1fr); }
+      .cards-4, .valence-grid, .pdf-map-grid { grid-template-columns: 1fr; }
+      .section-card { padding: 18px; }
+    }
+
+    /* =========================================================================
+       PRINT STYLES (TIPĂRIRE / SALVARE PDF CURATĂ PENTRU FIȘA FAE)
+       ========================================================================= */
+    @media print {
+      body { background: #FFFFFF; color: #000000; font-size: 11pt; }
+      .hero, .tabs-nav, .no-print, footer, .toast, .modal-backdrop { display: none !important; }
+      main { padding: 0; }
+      .tab-panel { display: none !important; }
+      #panel-fae { display: block !important; }
+      .section-card, .fae-dashboard, .fae-std-row {
+        box-shadow: none !important;
+        border: 1px solid #CBD5E1 !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .fae-dashboard {
+        grid-template-columns: 1fr 1fr 1fr !important;
+        padding: 12px !important;
+      }
+      .print-only-header {
+        display: block !important;
+        margin-bottom: 16px;
+        border-bottom: 2px solid #0F766E;
+        padding-bottom: 10px;
+      }
+    }
+
+    .print-only-header {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HERO BANNER ==================== -->
+  <header class="hero">
+    <svg class="hero-grid-bg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="medGrid" width="38" height="38" patternUnits="userSpaceOnUse">
+          <path d="M 38 0 L 0 0 0 38" fill="none" stroke="white" stroke-width="0.7" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#medGrid)" />
+    </svg>
+
+    <div class="container hero-inner">
+      <div>
+        <div class="badge-row">
+          <span class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6EE7B7" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            M.Of. Partea I, Nr. 808 bis / 23 septembrie 2026
+          </span>
+          <span class="hero-badge">Ordinul ANMCS nr. 139/2026 · 60 pagini</span>
+        </div>
+
+        <h1>
+          Standardele ANMCS — Ediția a III-a
+          <span class="hero-sub">Ciclul III de acreditare · Unități sanitare cu paturi</span>
+        </h1>
+
+        <p class="hero-desc">
+          Infografic interactiv și ghid de parcurgere rapidă pentru cele <strong>30 de standarde de calitate și siguranță a pacientului</strong> (Anexa 1) și <strong>Metodologia de evaluare, acreditare și monitorizare</strong> (Anexa 2) — inclusiv <strong>Fișă de Autoevaluare (FAE)</strong> cu semafor live și plan de măsuri generat automat.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn btn-white" onclick="switchTab('fae')">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+            Deschide Fișa de Autoevaluare Spital
+          </button>
+          <button class="btn btn-glass" onclick="switchTab('standarde')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            Explorează cele 30 de Standarde
+          </button>
+        </div>
+      </div>
+
+      <!-- Ilustrație Vectorială Sistem Sanitar -->
+      <div class="hero-visual">
+        <svg viewBox="0 0 420 220" width="100%" height="auto" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Ilustrație spital modern, siguranța pacientului și monitorizare EKG">
+          <circle cx="332" cy="54" r="52" fill="#38BDF8" fill-opacity="0.18" />
+          <circle cx="90" cy="164" r="44" fill="#34D399" fill-opacity="0.16" />
+          <path class="ekg-line" d="M8 144 L72 144 L86 144 L96 114 L108 172 L120 128 L130 144 L296 144 L308 118 L318 164 L328 131 L338 144 L412 144" stroke="#6EE7B7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+
+          <!-- Clădire Spital -->
+          <g transform="translate(88, 32)">
+            <rect x="0" y="54" width="52" height="96" rx="8" fill="#E0F2FE" fill-opacity="0.93" />
+            <rect x="160" y="54" width="52" height="96" rx="8" fill="#E0F2FE" fill-opacity="0.93" />
+            <rect x="44" y="18" width="124" height="132" rx="10" fill="#FFFFFF" />
+            <rect x="54" y="8" width="104" height="12" rx="6" fill="#CCFBF1" />
+            <circle cx="106" cy="48" r="18" fill="#0F766E" />
+            <rect x="102" y="37" width="8" height="22" rx="2" fill="#FFFFFF" />
+            <rect x="95" y="44" width="22" height="8" rx="2" fill="#FFFFFF" />
+            <rect x="60" y="76" width="22" height="15" rx="4" fill="#BAE6FD" />
+            <rect x="95" y="76" width="22" height="15" rx="4" fill="#BAE6FD" />
+            <rect x="130" y="76" width="22" height="15" rx="4" fill="#BAE6FD" />
+            <rect x="60" y="99" width="22" height="15" rx="4" fill="#99F6E4" />
+            <rect x="130" y="99" width="22" height="15" rx="4" fill="#99F6E4" />
+            <rect x="90" y="110" width="32" height="40" rx="6" fill="#0284C7" />
+            <line x1="106" y1="110" x2="106" y2="150" stroke="#E0F2FE" stroke-width="1.5" />
+            <rect x="12" y="70" width="18" height="14" rx="3" fill="#7DD3FC" />
+            <rect x="12" y="94" width="18" height="14" rx="3" fill="#7DD3FC" />
+            <rect x="12" y="118" width="18" height="14" rx="3" fill="#7DD3FC" />
+            <rect x="182" y="70" width="18" height="14" rx="3" fill="#7DD3FC" />
+            <rect x="182" y="94" width="18" height="14" rx="3" fill="#7DD3FC" />
+            <rect x="182" y="118" width="18" height="14" rx="3" fill="#7DD3FC" />
+          </g>
+          <rect x="44" y="182" width="332" height="7" rx="3.5" fill="#99F6E4" fill-opacity="0.65" />
+
+          <!-- Scut Siguranță -->
+          <g transform="translate(292, 108)">
+            <path d="M36 4 L66 16 V42 C66 62 53 77 36 84 C19 77 6 62 6 42 V16 L36 4 Z" fill="#10B981" stroke="#FFFFFF" stroke-width="3.5" />
+            <path d="M24 44 L33 53 L50 34" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+          <!-- Icon Sustenabilitate -->
+          <g transform="translate(22, 30)">
+            <rect x="0" y="0" width="52" height="52" rx="14" fill="#FFFFFF" fill-opacity="0.96" />
+            <path d="M26 13 C36 13 40 21 38 30 C36 37 29 40 23 39 C16 38 13 32 15 25 C17 18 22 13 26 13 Z" fill="#D1FAE5" stroke="#0F766E" stroke-width="2.2" />
+            <path d="M17 37 C22 31 27 25 34 19" stroke="#0F766E" stroke-width="2" stroke-linecap="round" />
+          </g>
+          <!-- Icon Inimă Pacient -->
+          <g transform="translate(344, 20)">
+            <rect x="0" y="0" width="50" height="50" rx="14" fill="#FFFFFF" fill-opacity="0.96" />
+            <path d="M25 36 C25 36 13 28.5 13 20.5 C13 16.7 15.9 14 19.4 14 C21.8 14 23.8 15.3 25 17.2 C26.2 15.3 28.2 14 30.6 14 C34.1 14 37 16.7 37 20.5 C37 28.5 25 36 25 36 Z" fill="#E0F2FE" stroke="#0284C7" stroke-width="2.2" stroke-linejoin="round" />
+          </g>
+        </svg>
+        <div class="hero-visual-caption">
+          <span>Calitate · Siguranță · Digitalizare · Sustenabilitate</span>
+          <strong>ANMCS · Ciclul III</strong>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== STICKY NAVIGATION (6 TAB-URI) ==================== -->
+  <nav class="tabs-nav" aria-label="Secțiuni infografic">
+    <div class="container">
+      <div class="tabs-list" id="mainTabs">
+        <button class="tab-btn active" data-tab="ansamblu" onclick="switchTab('ansamblu')">
+          1. Vedere de ansamblu
+        </button>
+        <button class="tab-btn" data-tab="standarde" onclick="switchTab('standarde')">
+          2. Explorator Standarde <span class="tab-pill">30</span>
+        </button>
+        <button class="tab-btn" data-tab="traseu" onclick="switchTab('traseu')">
+          3. Traseul Acreditării <span class="tab-pill">8</span>
+        </button>
+        <button class="tab-btn" data-tab="evaluare" onclick="switchTab('evaluare')">
+          4. Evaluare &amp; Alerte Critice
+        </button>
+        <button class="tab-btn" data-tab="ghid" onclick="switchTab('ghid')">
+          5. Ghid PDF &amp; Acronime
+        </button>
+        <button class="tab-btn tab-fae" data-tab="fae" onclick="switchTab('fae')">
+          6. Fișă Autoevaluare (FAE) <span class="tab-pill" id="navFaeScore">0%</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="container">
+
+    <!-- =================================================================== -->
+    <!-- TAB 1: VEDERE DE ANSAMBLU                                           -->
+    <!-- =================================================================== -->
+    <section id="panel-ansamblu" class="tab-panel active">
+      <!-- 6 Carduri KPI -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Volum document</div>
+          <div class="kpi-value">60</div>
+          <div class="kpi-note">Pagini M.Of. nr. 808 bis / 23.09.2026</div>
+        </div>
+        <div class="kpi-card blue">
+          <div class="kpi-label">Referințe majore</div>
+          <div class="kpi-value">3</div>
+          <div class="kpi-note">R01 Strategic · R02 Clinic · R03 Etică</div>
+        </div>
+        <div class="kpi-card emerald">
+          <div class="kpi-label">Standarde ANMCS</div>
+          <div class="kpi-value">30</div>
+          <div class="kpi-note">11 R01 + 16 R02 + 3 R03 (Pag. 3–26)</div>
+        </div>
+        <div class="kpi-card indigo">
+          <div class="kpi-label">Etape acreditare</div>
+          <div class="kpi-value">8</div>
+          <div class="kpi-note">De la înregistrare la reacreditare</div>
+        </div>
+        <div class="kpi-card amber">
+          <div class="kpi-label">Dimensiuni EM</div>
+          <div class="kpi-value">4</div>
+          <div class="kpi-note">Capacitate, Implementare, Rezultate, Îmbunătățire</div>
+        </div>
+        <div class="kpi-card coral">
+          <div class="kpi-label">Situații critice</div>
+          <div class="kpi-value">7</div>
+          <div class="kpi-note">Opresc imediat vizita (Art. 18 alin. 27)</div>
+        </div>
+      </div>
+
+      <!-- Ierarhia Standardelor -->
+      <div class="section-card">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Structura Standardelor · Art. 2 &amp; Art. 5</span>
+            <h2 class="section-title">Cum se citesc Standardele ANMCS? (Ierarhia R → S → Cr → C → EM)</h2>
+            <p class="section-subtitle">Selectează fiecare nivel pentru a vedea rolul lui și un exemplu real din Monitorul Oficial.</p>
+          </div>
+          <span class="page-tag">Pag. 28 &amp; Pag. 32</span>
+        </div>
+
+        <div class="hierarchy-grid">
+          <div class="hierarchy-list" id="hierarchyButtons"></div>
+          <div class="hier-detail" id="hierarchyDetail"></div>
+        </div>
+      </div>
+
+      <!-- Cele 6 Noutăți și Principii-Cheie ale Ediției a III-a -->
+      <div class="section-card">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow eyebrow-emerald">Noutăți &amp; Principii de Aur · Ediția a III-a</span>
+            <h2 class="section-title">Ce schimbă fundamental Ciclul al III-lea de acreditare?</h2>
+            <p class="section-subtitle">Actualizare orientată spre realitatea clinică, digitalizare etică, sustenabilitate și grija față de personal.</p>
+          </div>
+        </div>
+
+        <div class="cards-3">
+          <article class="feature-card">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                <span class="icon-box" style="background:var(--mint);color:var(--teal);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </span>
+                <span class="page-tag">Art. 4 · Pag. 31–32</span>
+              </div>
+              <h3 style="font-size:16px;font-weight:800;">Prevalența funcționării reale</h3>
+              <p style="font-size:13.5px;color:var(--text-muted);margin-top:8px;">
+                Interzice formalismul documentar inutil. Existența hârtiilor nu demonstrează implementarea; evaluatorii validează practica reală prin observare directă și date curente, fără birocrație paralelă.
+              </p>
+            </div>
+            <div style="margin-top:14px;padding-top:10px;border-top:1px solid var(--border);font-size:12px;font-weight:700;color:var(--teal);">
+              Anti-birocrație · Soluții echivalente recunoscute
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                <span class="icon-box" style="background:var(--blue-soft);color:var(--blue);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                </span>
+                <span class="page-tag">Art. 5, 24 · Pag. 32, 49</span>
+              </div>
+              <h3 style="font-size:16px;font-weight:800;">Algoritmul Național Unic</h3>
+              <p style="font-size:13.5px;color:var(--text-muted);margin-top:8px;">
+                Evaluatorii <strong>NU acordă punctaje</strong> și nu pot negocia calificative. Ei atribuie doar valențe EM pe bază de dovezi; scorurile și categoria se calculează uniform, fără rotunjiri intermediare.
+              </p>
+            </div>
+            <div style="margin-top:14px;padding-top:10px;border-top:1px solid var(--border);font-size:12px;font-weight:700;color:var(--blue);">
+              Obiectivitate maximă · Calcule reproductibile
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                <span class="icon-box" style="background:var(--emerald-soft);color:var(--emerald);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                </span>
+                <span class="page-tag">Std. 01.10 · Pag. 10</span>
+              </div>
+              <h3 style="font-size:16px;font-weight:800;">Sustenabilitate &amp; Climat</h3>
+              <p style="font-size:13.5px;color:var(--text-muted);margin-top:8px;">
+                Standard nou pentru spitale verzi: plan strategic de reducere a emisiilor de carbon, tranziție la energie regenerabilă, monitorizarea consumurilor (apă, energie, medicamente) și reducerea risipei.
+              </p>
+            </div>
+            <div style="margin-top:14px;padding-top:10px;border-top:1px solid var(--border);font-size:12px;font-weight:700;color:var(--emerald);">
+              Nou în Ediția III · Reziliență climatică
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                <span class="icon-box" style="background:var(--indigo-soft);color:var(--indigo);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                </span>
+                <span class="page-tag">Std. 01.11 · Pag. 10</span>
+              </div>
+              <h3 style="font-size:16px;font-weight:800;">Digitalizare &amp; Inteligență Artificială</h3>
+              <p style="font-size:13.5px;color:var(--text-muted);margin-top:8px;">
+                Evidența sistemelor AI clinice/administrative, <strong>supraveghere umană obligatorie</strong> (decizia aparține medicului), monitorizarea bias-urilor algoritmice, GDPR și alternative non-digitale.
+              </p>
+            </div>
+            <div style="margin-top:14px;padding-top:10px;border-top:1px solid var(--border);font-size:12px;font-weight:700;color:var(--indigo);">
+              Nou în Ediția III · Etică AI &amp; Siguranță digitală
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                <span class="icon-box" style="background:var(--amber-soft);color:var(--amber);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                </span>
+                <span class="page-tag">Std. 01.03.04 · Pag. 5</span>
+              </div>
+              <h3 style="font-size:16px;font-weight:800;">Bunăstarea personalului &amp; Anti-Burnout</h3>
+              <p style="font-size:13.5px;color:var(--text-muted);margin-top:8px;">
+                Monitorizare lunară a gărzilor, orelor suplimentare și repausului, evaluare anuală anonimă a calității vieții profesionale, suport psihologic confidențial și protecție împotriva violenței/hărțuirii.
+              </p>
+            </div>
+            <div style="margin-top:14px;padding-top:10px;border-top:1px solid var(--border);font-size:12px;font-weight:700;color:var(--amber);">
+              Siguranță psihologică · Prevenire epuizare
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                <span class="icon-box" style="background:var(--mint);color:var(--teal);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                </span>
+                <span class="page-tag">Std. 02.14, 02.03.04 · Pag. 13, 23</span>
+              </div>
+              <h3 style="font-size:16px;font-weight:800;">Audit clinic PROMs &amp; Ghid STIMA</h3>
+              <p style="font-size:13.5px;color:var(--text-muted);margin-top:8px;">
+                Echipele multidisciplinare de audit clinic integrează obligatoriu indicatori <strong>PROMs</strong> (rezultate raportate de pacient), iar planul de îngrijire al asistentului medical respectă ghidul <strong>STIMA</strong>.
+              </p>
+            </div>
+            <div style="margin-top:14px;padding-top:10px;border-top:1px solid var(--border);font-size:12px;font-weight:700;color:var(--teal);">
+              Îngrijire centrată pe rezultatul perceput de pacient
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- TAB 2: EXPLORATOR STANDARDE (ANEXA 1 — 30 STANDARDE)                -->
+    <!-- =================================================================== -->
+    <section id="panel-standarde" class="tab-panel">
+      <div class="section-card">
+        <div class="section-header" style="margin-bottom:14px;">
+          <div>
+            <span class="eyebrow">Anexa nr. 1 · Pag. 3–26</span>
+            <h2 class="section-title">Explorator Standarde ANMCS (toate cele 30 de standarde)</h2>
+            <p class="section-subtitle">Caută după cod, titlu sau cuvânt cheie și extinde orice card pentru a vedea criteriile principale.</p>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-outline btn-sm" onclick="toggleAllStandards(true)">Extinde toate</button>
+            <button class="btn btn-outline btn-sm" onclick="toggleAllStandards(false)">Restrânge toate</button>
+          </div>
+        </div>
+
+        <div class="search-bar-wrap">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input id="stdSearchInput" class="search-input" type="text" placeholder="Caută standarde (ex: AI, antibiotice, ATI, burnout, GDPR, dializă, copil, sânge, carbon, PROMs)..." />
+        </div>
+
+        <div class="filter-row" id="stdFilterButtons" style="margin-bottom:10px;">
+          <button class="filter-btn active" data-filter="all" onclick="setStdFilter('all')">Toate (30)</button>
+          <button class="filter-btn" data-filter="R01" onclick="setStdFilter('R01')">R01 Strategic &amp; Organizațional (11 · Pag. 3–10)</button>
+          <button class="filter-btn" data-filter="R02" onclick="setStdFilter('R02')">R02 Management Clinic (16 · Pag. 10–24)</button>
+          <button class="filter-btn" data-filter="R03" onclick="setStdFilter('R03')">R03 Etică &amp; Drepturi (3 · Pag. 24–26)</button>
+          <button class="filter-btn" data-filter="NEW" onclick="setStdFilter('NEW')">Noutăți &amp; Teme Cheie</button>
+        </div>
+
+        <div style="font-size:12.5px;color:var(--text-light);font-weight:600;" id="stdCountLabel">Se afișează 30 din 30 standarde</div>
+      </div>
+
+      <div id="standardsGrid" class="cards-3"></div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- TAB 3: TRASEUL ACREDITĂRII (ANEXA 2 — 8 ETAPE)                      -->
+    <!-- =================================================================== -->
+    <section id="panel-traseu" class="tab-panel">
+      <div class="section-card">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow eyebrow-blue">Anexa nr. 2 · Metodologia ANMCS · Art. 6–40</span>
+            <h2 class="section-title">Traseul Acreditării în 8 Etape</h2>
+            <p class="section-subtitle">Click pe fiecare etapă pentru a vedea obligațiile Spitalului (US), rolul ANMCS, termenele legale și livrabilele.</p>
+          </div>
+          <span class="page-tag">Pag. 32–55</span>
+        </div>
+
+        <div class="stepper-nav" id="stepperNav"></div>
+        <div class="stage-detail-box" id="stageDetailCard"></div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px;">
+          <button id="prevStageBtn" class="btn btn-outline btn-sm" onclick="navigateStage(-1)">← Etapa anterioară</button>
+          <span id="stageProgressText" style="font-size:13px;font-weight:700;color:var(--text-muted);">Etapa 1 din 8</span>
+          <button id="nextStageBtn" class="btn btn-teal btn-sm" onclick="navigateStage(1)">Etapa următoare →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- TAB 4: EVALUARE & ALERTE CRITICE                                    -->
+    <!-- =================================================================== -->
+    <section id="panel-evaluare" class="tab-panel">
+      <!-- 4 Dimensiuni EM + 7 Valențe -->
+      <div class="section-card">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Art. 2 lit. eee) &amp; Art. 5</span>
+            <h2 class="section-title">Cele 4 Dimensiuni EM și Cele 7 Valențe Oficiale</h2>
+            <p class="section-subtitle">Fiecare cerință aplicabilă se analizează pe 4 dimensiuni, iar evaluatorul atribuie exclusiv valența susținută de dovezi.</p>
+          </div>
+          <span class="page-tag">Pag. 30 &amp; 32</span>
+        </div>
+
+        <div class="cards-4" style="margin-bottom:22px;">
+          <div style="background:var(--mint-light);border:1px solid var(--border-teal);border-radius:13px;padding:15px;">
+            <span class="valence-code" style="background:var(--teal);">EM1</span>
+            <h3 style="font-size:15px;font-weight:800;margin-top:10px;">Capacitate</h3>
+            <p style="font-size:12.5px;color:var(--text-muted);margin-top:5px;">Resurse, organizare, reguli, competențe și infrastructură pentru îndeplinirea cerinței.</p>
+          </div>
+          <div style="background:#F0F9FF;border:1px solid #BAE6FD;border-radius:13px;padding:15px;">
+            <span class="valence-code" style="background:var(--blue);">EM2</span>
+            <h3 style="font-size:15px;font-weight:800;margin-top:10px;">Implementare</h3>
+            <p style="font-size:12.5px;color:var(--text-muted);margin-top:5px;">Aplicarea reală în activitatea curentă, verificată prin observare, interviuri și trasabilitate.</p>
+          </div>
+          <div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:13px;padding:15px;">
+            <span class="valence-code" style="background:var(--emerald);">EM3</span>
+            <h3 style="font-size:15px;font-weight:800;margin-top:10px;">Rezultate</h3>
+            <p style="font-size:12.5px;color:var(--text-muted);margin-top:5px;">Monitorizarea efectelor, indicatorilor clinici/administrativi și rezultatelor obținute.</p>
+          </div>
+          <div style="background:#EEF2FF;border:1px solid #C7D2FE;border-radius:13px;padding:15px;">
+            <span class="valence-code" style="background:var(--indigo);">EM4</span>
+            <h3 style="font-size:15px;font-weight:800;margin-top:10px;">Îmbunătățire</h3>
+            <p style="font-size:12.5px;color:var(--text-muted);margin-top:5px;">Utilizarea concluziilor din monitorizare, audituri și incidente pentru corectare continuă.</p>
+          </div>
+        </div>
+
+        <h3 style="font-size:13px;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-light);margin-bottom:10px;">Cele 7 Valențe oficiale ale Elementelor Măsurabile (Art. 2 lit. eee, Pag. 30)</h3>
+        <div class="valence-grid">
+          <div class="valence-item"><span class="valence-code" style="background:var(--emerald);">C</span><div><strong>Conform</strong><br/>Demonstrat integral prin dovezi concordante.</div></div>
+          <div class="valence-item"><span class="valence-code" style="background:var(--amber);">CP</span><div><strong>Conform parțial</strong><br/>Implementare incompletă; apare în PRE/RE.</div></div>
+          <div class="valence-item"><span class="valence-code" style="background:var(--coral);">NC</span><div><strong>Neconform</strong><br/>Cerință neîndeplinită; motivată cu dovezi.</div></div>
+          <div class="valence-item"><span class="valence-code" style="background:#EA580C;">DI</span><div><strong>Documentat insuficient</strong><br/>Dovezi insuficiente pentru validare.</div></div>
+          <div class="valence-item"><span class="valence-code" style="background:#64748B;">N/A</span><div><strong>Neaplicabil</strong><br/>Nu corespunde profilului/structurii autorizate.</div></div>
+          <div class="valence-item"><span class="valence-code" style="background:var(--blue);">NFC</span><div><strong>Nu a fost cazul</strong><br/>Situația nu a apărut în perioada analizată.</div></div>
+          <div class="valence-item" style="grid-column: span 2;"><span class="valence-code" style="background:var(--indigo);">NE</span><div><strong>Neevaluabil</strong><br/>Nu a putut fi verificat obiectiv în contextul vizitei de evaluare.</div></div>
+        </div>
+      </div>
+
+      <!-- 6 Tehnici de colectare a datelor -->
+      <div class="section-card">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow eyebrow-blue">Art. 28 · Metode de evaluare</span>
+            <h2 class="section-title">Cele 6 Tehnici de Colectare a Datelor la Fața Locului</h2>
+          </div>
+          <span class="page-tag">Pag. 52</span>
+        </div>
+        <div class="cards-3" id="techniquesGrid"></div>
+      </div>
+
+      <!-- 7 Situații Critice + Suspendarea Acreditării -->
+      <div class="cards-2">
+        <div class="alert-panel">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;">
+            <div>
+              <span class="eyebrow eyebrow-coral">Oprire imediată a vizitei</span>
+              <h3 style="font-size:19px;font-weight:800;color:#991B1B;">Cele 7 Situații Critice de Siguranță</h3>
+            </div>
+            <span class="page-tag" style="background:#FEE2E2;color:#991B1B;">Art. 18(27) · Pag. 44</span>
+          </div>
+          <p style="font-size:13px;color:#7F1D1D;margin-top:8px;">
+            Deficiențe cu risc grav și imediat. Comisia oprește imediat evaluarea, întocmește proces-verbal și notifică spitalul și ANMCS (Art. 19, Pag. 45).
+          </p>
+          <ol class="alert-list" id="criticalAlertList"></ol>
+        </div>
+
+        <div class="warn-panel" style="display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;">
+              <div>
+                <span class="eyebrow eyebrow-amber">Post-acreditare</span>
+                <h3 style="font-size:19px;font-weight:800;color:#92400E;">Suspendarea Acreditării (max. 6 luni)</h3>
+              </div>
+              <span class="page-tag" style="background:#FEF3C7;color:#92400E;">Art. 27 · Pag. 51–52</span>
+            </div>
+            <p style="font-size:13px;color:#78350F;margin-top:8px;">
+              Dispusă prin ordin al președintelui ANMCS în următoarele 5 situații:
+            </p>
+            <ul class="alert-list" style="margin-top:12px;">
+              <li style="border-color:#FDE68A;"><strong>1.</strong> Neafișarea sau afișarea eronată a însemnelor / categoriei de acreditare.</li>
+              <li style="border-color:#FDE68A;"><strong>2.</strong> Neconformități de siguranță care pot genera pericol pentru pacienți, personal, date sau mediu.</li>
+              <li style="border-color:#FDE68A;"><strong>3.</strong> Neîndeplinirea cerințelor esențiale definite prin metodologie.</li>
+              <li style="border-color:#FDE68A;"><strong>4.</strong> Evenimente adverse grave neidentificate și/sau neraportate de unitatea sanitară.</li>
+              <li style="border-color:#FDE68A;"><strong>5.</strong> Nerespectarea termenelor și condițiilor de monitorizare post-acreditare.</li>
+            </ul>
+          </div>
+
+          <div style="margin-top:16px;background:#FEF3C7;border:1px solid #FCD34D;border-radius:13px;padding:14px;">
+            <div style="font-size:12px;font-weight:800;color:#92400E;margin-bottom:8px;">OBLIGAȚII STRICTE PE DURATA SUSPENDĂRII:</div>
+            <div class="cards-3" style="gap:8px;text-align:center;">
+              <div style="background:#fff;border-radius:9px;padding:9px;"><strong style="color:var(--coral);font-size:15px;">3 zile</strong><div style="font-size:11px;color:var(--text-muted);">Afișare „acreditare suspendată”</div></div>
+              <div style="background:#fff;border-radius:9px;padding:9px;"><strong style="color:var(--amber);font-size:15px;">5 zile lucr.</strong><div style="font-size:11px;color:var(--text-muted);">Plan de măsuri către ANMCS</div></div>
+              <div style="background:#fff;border-radius:9px;padding:9px;"><strong style="color:var(--teal);font-size:15px;">Săptămânal</strong><div style="font-size:11px;color:var(--text-muted);">Raportare progres remediere</div></div>
+            </div>
+            <p style="font-size:11.5px;color:#92400E;margin-top:8px;"><strong>Atenție:</strong> Neremedierea la expirarea termenului atrage <strong>retragerea acreditării</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- TAB 5: GHID PDF & DICȚIONAR ACRONIME                                -->
+    <!-- =================================================================== -->
+    <section id="panel-ghid" class="tab-panel">
+      <div class="section-card">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Hartă vizuală · 60 pagini</span>
+            <h2 class="section-title">Unde găsesc informația în PDF? (M.Of. nr. 808 bis / 2026)</h2>
+            <p class="section-subtitle">Click pe orice bloc pentru a sări direct în secțiunea corespunzătoare din aplicație.</p>
+          </div>
+          <span class="page-tag">Ordinul nr. 139/2026</span>
+        </div>
+
+        <div class="pdf-bar">
+          <div style="width:3.5%;background:#64748B;" title="Pag. 1–2: Ordin"></div>
+          <div style="width:14%;background:var(--teal);" title="Pag. 3–10: R01 Strategic"></div>
+          <div style="width:24.5%;background:var(--blue);" title="Pag. 10–24: R02 Clinic"></div>
+          <div style="width:4.5%;background:var(--indigo);" title="Pag. 24–26: R03 Etică"></div>
+          <div style="width:53.5%;background:var(--emerald);" title="Pag. 27–56: Anexa 2 Metodologie"></div>
+        </div>
+
+        <div class="pdf-map-grid" id="pdfMapGrid"></div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-header" style="margin-bottom:14px;">
+          <div>
+            <span class="eyebrow eyebrow-blue">Art. 2 · Glosar oficial</span>
+            <h2 class="section-title">Dicționar Interactiv de Acronime și Termeni</h2>
+            <p class="section-subtitle">Toate cele 23 de abrevieri cheie din document (Pag. 27–31 și textul standardelor).</p>
+          </div>
+          <span class="page-tag" id="acronymCountLabel">23 termeni</span>
+        </div>
+
+        <div class="search-bar-wrap" style="max-width:520px;">
+          <svg class="search-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input id="acronymSearchInput" class="search-input" type="text" placeholder="Caută acronim (ex: CaPeSaRo, FAE, DOS, PROMs, STIMA, TSFR, RMD)..." />
+        </div>
+
+        <div id="acronymsGrid" class="cards-3"></div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- TAB 6: FIȘĂ AUTOEVALUARE (FAE) — INSTRUMENT INTERACTIV COMPLET      -->
+    <!-- =================================================================== -->
+    <section id="panel-fae" class="tab-panel">
+
+      <!-- Antet dedicat exclusiv tipăririi/PDF -->
+      <div class="print-only-header">
+        <h2 style="font-size:18pt;color:#0F766E;">Fișă de Autoevaluare Spital (tip FAE) — Standardele ANMCS Ediția a III-a</h2>
+        <p style="font-size:10pt;color:#334155;">Bază normativă: Ordinul ANMCS nr. 139/2026 (M.Of. Partea I, nr. 808 bis / 23.09.2026)</p>
+        <p id="printMetaLine" style="font-size:10.5pt;font-weight:700;margin-top:6px;"></p>
+      </div>
+
+      <!-- Notă Metodologică -->
+      <div class="fae-note">
+        <strong>Notă metodologică (conform Art. 12 alin. 5 și Art. 24, Pag. 37 &amp; 49):</strong> Această fișă este un <strong>instrument orientativ de pregătire internă (tip FAE)</strong> destinat spitalelor pentru a identifica blocajele, riscurile critice și decalajele față de cele 30 de standarde. Rezultatul autoevaluării nu înlocuiește evaluarea externă și nici <em>Algoritmul Național Unic</em> al ANMCS, dar fundamentează direct Planul de Management al Calității (Art. 13).
+      </div>
+
+      <!-- Header Date Spital & Acțiuni -->
+      <div class="section-card">
+        <div class="section-header" style="margin-bottom:14px;">
+          <div>
+            <span class="eyebrow eyebrow-emerald">Instrument practic pentru SMCSS &amp; Management</span>
+            <h2 class="section-title">Fișă de Autoevaluare Pregătire Acreditare (FAE)</h2>
+          </div>
+          <span id="saveStatusBadge" class="page-tag" style="background:var(--mint);color:var(--teal);">✓ Salvat automat local</span>
+        </div>
+
+        <div class="fae-meta-grid">
+          <div class="form-group">
+            <label for="faeHospitalName">Numele Unității Sanitare</label>
+            <input id="faeHospitalName" class="form-input" type="text" placeholder="ex: Spitalul Județean de Urgență..." />
+          </div>
+          <div class="form-group">
+            <label for="faeDate">Data autoevaluării</label>
+            <input id="faeDate" class="form-input" type="date" />
+          </div>
+          <div class="form-group">
+            <label for="faeManager">Responsabil SMCSS / Evaluator intern</label>
+            <input id="faeManager" class="form-input" type="text" placeholder="ex: Dr. Popescu Maria — Coordonator SMCSS" />
+          </div>
+        </div>
+
+        <div class="fae-toolbar no-print">
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <button class="btn btn-outline btn-sm" onclick="loadDemoFae()">⚡ Încarcă exemplu demo</button>
+            <button class="btn btn-danger-outline btn-sm" onclick="openResetModal()">↺ Resetează fișa</button>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <button class="btn btn-outline btn-sm" onclick="exportFaeCSV()">📊 Exportă CSV (Excel)</button>
+            <button class="btn btn-teal btn-sm" onclick="printFaeReport()">🖨️ Tipărește / Salvează PDF</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANOU REZUMAT LIVE -->
+      <div class="fae-dashboard" id="faeDashboard">
+        <!-- Coloana 1: Semafor pregătire -->
+        <div id="semaforBox" class="semafor-box semafor-red">
+          <div class="semafor-dot"></div>
+          <div>
+            <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.04em;opacity:0.85;">Status Pregătire Acreditare</div>
+            <div id="semaforTitle" style="font-size:16px;font-weight:800;margin-top:2px;">Risc major / Blocaj la evaluare</div>
+            <div id="semaforReason" style="font-size:12.5px;margin-top:4px;line-height:1.4;">Completați condițiile obligatorii și evaluați standardele.</div>
+          </div>
+        </div>
+
+        <!-- Coloana 2: Scor orientativ circular -->
+        <div class="ring-wrap">
+          <svg width="92" height="92" viewBox="0 0 96 96">
+            <circle cx="48" cy="48" r="40" fill="none" stroke="#E2E8F0" stroke-width="9" />
+            <circle id="scoreRingCircle" cx="48" cy="48" r="40" fill="none" stroke="#0F766E" stroke-width="9"
+              stroke-linecap="round" stroke-dasharray="251.2" stroke-dashoffset="251.2"
+              transform="rotate(-90 48 48)" style="transition:stroke-dashoffset 0.35s ease, stroke 0.25s ease;" />
+            <text id="scoreRingText" x="48" y="53" text-anchor="middle" font-size="20" font-weight="800" fill="#0F172A">0%</text>
+          </svg>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:var(--text-muted);">Scor orientativ conformitate</div>
+            <div id="evalCountText" style="font-size:14px;font-weight:800;color:var(--text);margin-top:2px;">0 / 30 standarde evaluate</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;font-size:11.5px;font-weight:700;">
+              <span id="cntMandatory" style="padding:2px 8px;border-radius:6px;background:#F1F5F9;color:#334155;">Obligatorii: 0/5</span>
+              <span id="cntCritical" style="padding:2px 8px;border-radius:6px;background:#F1F5F9;color:#334155;">Alerte: 0/7</span>
+              <span id="cntMeasures" style="padding:2px 8px;border-radius:6px;background:#FEF3C7;color:#92400E;">Măsuri: 0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coloana 3: Mini-bare progres pe R01, R02, R03 -->
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700;">
+              <span style="color:var(--teal);">R01 Strategic &amp; Organizațional</span>
+              <span id="barR01Text">0%</span>
+            </div>
+            <div class="progress-bar-bg"><div id="barR01Fill" class="progress-bar-fill" style="width:0%;background:var(--teal);"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700;">
+              <span style="color:var(--blue);">R02 Management Clinic</span>
+              <span id="barR02Text">0%</span>
+            </div>
+            <div class="progress-bar-bg"><div id="barR02Fill" class="progress-bar-fill" style="width:0%;background:var(--blue);"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700;">
+              <span style="color:var(--indigo);">R03 Etică &amp; Drepturile Pacientului</span>
+              <span id="barR03Text">0%</span>
+            </div>
+            <div class="progress-bar-bg"><div id="barR03Fill" class="progress-bar-fill" style="width:0%;background:var(--indigo);"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASUL 1: CONDIȚII MINIME OBLIGATORII (BLOCANTE) -->
+      <div class="section-card">
+        <div class="section-header" style="margin-bottom:14px;">
+          <div>
+            <span class="eyebrow eyebrow-coral">Pasul 1 · Blocant pentru intrarea în evaluare</span>
+            <h3 class="section-title" style="font-size:18px;">Condiții minime obligatorii (Art. 8 &amp; Art. 14)</h3>
+            <p class="section-subtitle">Lipsa oricăreia dintre aceste 5 condiții împiedică înscrierea pe Lista UEAS și intrarea în evaluare.</p>
+          </div>
+          <span class="page-tag">Pag. 33, 36–37</span>
+        </div>
+        <div class="cond-list" id="faeMandatoryList"></div>
+      </div>
+
+      <!-- PASUL 2: SITUAȚII CRITICE DE SIGURANȚĂ -->
+      <div class="section-card">
+        <div class="section-header" style="margin-bottom:14px;">
+          <div>
+            <span class="eyebrow eyebrow-coral">Pasul 2 · Risc de oprire imediată a vizitei</span>
+            <h3 class="section-title" style="font-size:18px;">Verificare Situații Critice de Siguranță (Art. 18 alin. 27)</h3>
+            <p class="section-subtitle">Verificați pe teren absența celor 7 riscuri grave. Orice alertă activă blochează semaforul și intră automat cu prioritate CRITICĂ în Planul de Măsuri.</p>
+          </div>
+          <span class="page-tag">Pag. 44</span>
+        </div>
+        <div id="faeCriticalList"></div>
+      </div>
+
+      <!-- PASUL 3: AUTOEVALUARE PE CELE 30 DE STANDARDE ANMCS -->
+      <div class="section-card">
+        <div class="section-header" style="margin-bottom:14px;">
+          <div>
+            <span class="eyebrow">Pasul 3 · Anexa nr. 1</span>
+            <h3 class="section-title" style="font-size:18px;">Autoevaluare pe cele 30 de Standarde ANMCS</h3>
+            <p class="section-subtitle">Selectați valența orientativă (<strong>C</strong>=100%, <strong>CP</strong>=50%, <strong>NC/DI</strong>=0%, <strong>N/A</strong>=exclus), bifați opțional dimensiunile EM și adăugați măsuri/responsabili.</p>
+          </div>
+          <span class="page-tag">Pag. 3–26</span>
+        </div>
+
+        <!-- Filtre & Preset Profil Spital -->
+        <div class="no-print" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px;padding:12px;background:#F8FAFC;border-radius:12px;border:1px solid var(--border);">
+          <div class="filter-row" id="faeStdFilters">
+            <button class="filter-btn active" data-ff="all" onclick="setFaeFilter('all')">Toate (30)</button>
+            <button class="filter-btn" data-ff="R01" onclick="setFaeFilter('R01')">R01 (11)</button>
+            <button class="filter-btn" data-ff="R02" onclick="setFaeFilter('R02')">R02 (16)</button>
+            <button class="filter-btn" data-ff="R03" onclick="setFaeFilter('R03')">R03 (3)</button>
+            <button class="filter-btn" data-ff="ISSUES" onclick="setFaeFilter('ISSUES')">Doar NC / DI / CP</button>
+          </div>
+          <button class="btn btn-outline btn-sm" onclick="applyOptionalNAPreset()" title="Marchează N/A pentru Neonatologie (02.04), Dializă (02.06), Radioterapie (02.07), Paliative (02.08)">
+            🏥 Preset N/A servicii opționale (02.04, 02.06–02.08)
+          </button>
+        </div>
+
+        <div id="faeStandardsContainer"></div>
+      </div>
+
+      <!-- PASUL 4: PLAN DE MĂSURI GENERAT AUTOMAT (CONFORM ART. 13) -->
+      <div class="section-card">
+        <div class="section-header" style="margin-bottom:14px;">
+          <div>
+            <span class="eyebrow eyebrow-amber">Pasul 4 · Generat dinamic conform Art. 13</span>
+            <h3 class="section-title" style="font-size:18px;">Plan de Măsuri de Îmbunătățire &amp; Conformare</h3>
+            <p class="section-subtitle">Adună automat toate condițiile obligatorii neîndeplinite, alertele critice și standardele NC / DI / CP, sortate după prioritate.</p>
+          </div>
+          <span class="page-tag" id="planCountTag">0 măsuri</span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="plan-table">
+            <thead>
+              <tr>
+                <th>Prioritate</th>
+                <th>Cod / Domeniu</th>
+                <th>Situație identificată</th>
+                <th>Acțiune recomandată &amp; Observație spital</th>
+                <th>Responsabil / Termen</th>
+                <th>PDF</th>
+              </tr>
+            </thead>
+            <tbody id="faeActionPlanBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;">
+      <div>
+        <strong>Infografic &amp; Fișă FAE — Standardele ANMCS Ediția a III-a</strong> · Bază normativă: Ordinul ANMCS nr. 139/2026 (M.Of. Partea I, nr. 808 bis / 23.09.2026).
+      </div>
+      <div>Instrument autonom · Datele FAE rămân exclusiv în browserul tău (localStorage).</div>
+    </div>
+  </footer>
+
+  <!-- Toast Notificare -->
+  <div id="toastMsg" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Modal Confirmare Resetare (fără confirm() nativ!) -->
+  <div id="resetModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="resetModalTitle">
+    <div class="modal-box">
+      <h3 id="resetModalTitle" style="font-size:18px;font-weight:800;color:var(--text);">Resetezi Fișa de Autoevaluare?</h3>
+      <p style="font-size:13.5px;color:var(--text-muted);margin-top:8px;">
+        Această acțiune va șterge toate bifele, valențele, observațiile și datele unității sanitare salvate local în browser.
+      </p>
+      <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:20px;">
+        <button class="btn btn-outline btn-sm" onclick="closeResetModal()">Anulează</button>
+        <button class="btn btn-sm" style="background:var(--coral);color:#fff;" onclick="confirmResetFae()">Da, resetează tot</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT COMPLET AUTONOM ==================== -->
+  <script>
+    // =========================================================================
+    // 1. DATE OFICIALE DIN M.OF. NR. 808 BIS / 23.09.2026
+    // =========================================================================
+
+    const HIERARCHY_LEVELS = [
+      {
+        code: 'R', name: 'Referință', subtitle: '3 domenii majore ale calității', color: '#0F766E', page: 'Pag. 28',
+        desc: 'Gruparea coerentă de standarde, criterii și cerințe care vizează un domeniu major al calității și siguranței serviciilor de sănătate.',
+        exCode: 'R 01, R 02, R 03',
+        exText: '01 Managementul Strategic și Organizațional · 02 Managementul Clinic · 03 Etica Medicală și Drepturile Pacientului.'
+      },
+      {
+        code: 'S', name: 'Standard ANMCS', subtitle: '30 de standarde (Anexa nr. 1)', color: '#0284C7', page: 'Pag. 3–26',
+        desc: 'Standard de calitate în înțelesul art. 2 lit. d² din Legea nr. 185/2017, aplicabil unităților sanitare cu paturi.',
+        exCode: 'Standard 01.11 (Pag. 10)',
+        exText: '„Unitatea sanitară gestionează riscurile informaționale și digitale, precum și sistemele de inteligență artificială astfel încât activitatea clinică să poată continua în siguranță.”'
+      },
+      {
+        code: 'Cr', name: 'Criteriu', subtitle: 'Obiectiv specific al standardului', color: '#059669', page: 'Pag. 28',
+        desc: 'Componentă a standardului care descrie un obiectiv specific sau un rezultat necesar realizării standardului ANMCS.',
+        exCode: 'Criteriu 02.12.01 (Pag. 21)',
+        exText: '„Unitatea sanitară aplică un proces sistematic de identificare, evaluare și gestionare a riscurilor clinice.”'
+      },
+      {
+        code: 'C', name: 'Cerință', subtitle: 'Ce trebuie realizat concret', color: '#4F46E5', page: 'Pag. 28',
+        desc: 'Enunț care stabilește ce trebuie realizat pentru satisfacerea criteriului; primește o singură apreciere finală prin Algoritmul Național.',
+        exCode: 'Cerința 02.12.01.04 (Pag. 21)',
+        exText: '„Pacientul este identificat corect prin cel puțin doi identificatori independenți înaintea administrării tratamentului, recoltării, transfuziei, investigației, procedurii, transferului.”'
+      },
+      {
+        code: 'EM', name: 'Element Măsurabil', subtitle: '4 dimensiuni: Capacitate, Implementare, Rezultate, Îmbunătățire', color: '#D97706', page: 'Pag. 30, 32',
+        desc: 'Componenta operațională a unei cerințe pentru care evaluatorul colectează dovezi și atribuie o valență (C, CP, NC, DI, N/A, NFC, NE). Nu impune documente separate.',
+        exCode: 'EM1 · EM2 · EM3 · EM4',
+        exText: 'EM1 Capacitate → EM2 Implementare → EM3 Rezultate → EM4 Îmbunătățire.'
+      }
+    ];
+
+    const STANDARDS = [
+      // R01 (11)
+      { code: '01.01', ref: 'R01', page: 'Pag. 3', isNew: false, badge: '',
+        title: 'Strategia organizației',
+        summary: 'Fundamentată pe analiza nevoilor populației-țintă, a cererii de servicii și a capacității unității sanitare.',
+        keywords: 'strategie plan adresabilitate demografie cercetare spital clinic obiective',
+        actionHint: 'Actualizați Planul Strategic și Planul Anual de Activități corelate cu analiza adresabilității și riscurilor.',
+        points: ['Analiza periodică a nevoilor populației, adresabilității și cazurilor transferate/reorientate.', 'Integrarea obiectivelor de calitate, siguranță și calitatea vieții profesionale.', 'Coordonare transversală între departamente cu responsabil, termen și resurse.', 'Institutele și spitalele clinice dezvoltă și transferă cercetarea științifică.']
+      },
+      { code: '01.02', ref: 'R01', page: 'Pag. 3–4', isNew: false, badge: '',
+        title: 'Structura organizatorică și managementul organizațional',
+        summary: 'Asigură derularea optimă a proceselor, menținerea autorizațiilor legale și funcționarea comisiilor.',
+        keywords: 'avize autorizatii structura organigrama comisii comitete consilii control managerial',
+        actionHint: 'Verificați valabilitatea tuturor avizelor/autorizațiilor și documentați impactul deciziilor comisiilor funcționale.',
+        points: ['Evidență actualizată și monitorizarea termenelor pentru toate autorizațiile și avizele legale.', 'Analiza periodică a structurii organizatorice cu consultarea reprezentanților salariaților.', 'Structuri funcționale (comisii, comitete, consilii) operaționale cu impact dovedit asupra indicatorilor.']
+      },
+      { code: '01.03', ref: 'R01', page: 'Pag. 4–5', isNew: true, badge: 'Burnout & HR',
+        title: 'Managementul resurselor umane',
+        summary: 'Necesar de personal raportat la nevoia reală, prevenirea burnout-ului, siguranță psihologică și protecție anti-violență.',
+        keywords: 'personal hr burnout epuizare garzi ore suplimentare siguranta psihologica violenta hartuire discriminare avertizori formare',
+        actionHint: 'Implementați monitorizarea lunară a gărzilor/repausului, evaluarea anonimă a satisfacției și accesul la suport psihologic.',
+        points: ['Necesar de personal stabilit anual raportat la nevoia reală, dependența pacienților și auditul timpului de muncă.', 'Monitorizare lunară a gărzilor, orelor suplimentare și repausului pentru prevenirea burnout-ului.', 'Evaluare anuală anonimă a satisfacției, culturii siguranței și calității vieții profesionale (01.03.04).', 'Suport psihologic confidențial post-traumă, canale avertizori, instruire anti-violență și prevenirea hărțuirii.']
+      },
+      { code: '01.04', ref: 'R01', page: 'Pag. 5–6', isNew: false, badge: '',
+        title: 'Managementul financiar și administrativ',
+        summary: 'Strategia financiară, monitorizarea costurilor, aprovizionarea corelată cu consumul și rezervele critice.',
+        keywords: 'buget investitii costuri aprovizionare stocuri rezerve situatii exceptionale',
+        actionHint: 'Corelați bugetul și planul de investiții cu riscurile, analizați stocurile și asigurați rezerva pentru situații excepționale.',
+        points: ['Plan anual de investiții fundamentat pe obiective strategice și nevoile populației.', 'Analiza periodică a execuției bugetare și metodologie de monitorizare a costurilor.', 'Identificarea produselor critice, analiza stocurilor și constituirea rezervelor pentru situații excepționale.']
+      },
+      { code: '01.05', ref: 'R01', page: 'Pag. 6–7', isNew: false, badge: '',
+        title: 'Sistemul informațional',
+        summary: 'Circuite informaționale cu sisteme de alertare, securitatea datelor, back-up și arhivare confidențială.',
+        keywords: 'sistem informatic date securitate gdpr backup arhivare distrugere documente alerte',
+        actionHint: 'Auditati drepturile de acces pe roluri, sistemele de back-up și procedurile de arhivare/distrugere securizată.',
+        points: ['Circuite și fluxuri informaționale la timp, cu sisteme de alertare ce previn erorile decizionale.', 'Respectarea securității datelor, controlul accesului pe roluri și investigarea incidentelor.', 'Sisteme de back-up, arhivare și distrugere securizată + suport pentru educația angajaților.']
+      },
+      { code: '01.06', ref: 'R01', page: 'Pag. 7', isNew: false, badge: '',
+        title: 'Sistemul de comunicare',
+        summary: 'Comunicare externă accesibilă, continuitate la transfer/externare, protocoale interne și educarea pacientului.',
+        keywords: 'comunicare mass media transfer externare protocoale semnalizare educatie pacient',
+        actionHint: 'Verificați semnalizarea spațiilor, protocoalele de comunicare între profesioniști și informarea la transfer/externare.',
+        points: ['Canale publice accesibile, educație sanitară și comunicare coerentă cu mass-media.', 'Transmiterea la timp a informațiilor la transfer, consult interdisciplinar și externare.', 'Protocoale de comunicare profesională, identificarea personalului și semnalizare eficientă.', 'Implicarea pacientului în decizii prin comunicare adaptată nivelului său de înțelegere.']
+      },
+      { code: '01.07', ref: 'R01', page: 'Pag. 7–8', isNew: false, badge: '',
+        title: 'Sistemul de management al calității serviciilor de sănătate',
+        summary: 'Operaționalizarea SMCSS, evaluarea culturii siguranței, planul de calitate și experiența pacienților.',
+        keywords: 'smcss calitate cultura sigurantei satisfactie pacienti reclamatii sesizari imbunatatire',
+        actionHint: 'Operaționalizați Planul de Management al Calității, măsurați cultura siguranței și corelați feedback-ul pacienților cu datele clinice.',
+        points: ['SMCSS coordonează metodologic monitorizarea, evaluarea și îmbunătățirea continuă.', 'Evaluare periodică a culturii siguranței printr-un instrument standardizat.', 'Plan de calitate bazat pe riscuri, rezultate clinice, audituri și evenimente adverse.', 'Evaluare confidențială a experienței pacienților și analiza sistemică a reclamațiilor.']
+      },
+      { code: '01.08', ref: 'R01', page: 'Pag. 8–9', isNew: false, badge: 'Siguranță fizică',
+        title: 'Managementul riscurilor neclinice',
+        summary: 'Registru consolidat al riscurilor, utilități vitale, seism/incendiu/explozie/contaminare și planuri dezastre.',
+        keywords: 'riscuri neclinice seism incendiu explozie contaminare iradiere utilitati gaze deseuri paza dezastre',
+        actionHint: 'Actualizați Registrul riscurilor neclinice, verificați sursele de rezervă pentru utilități și instruirea la incendiu/seism.',
+        points: ['Registru consolidat al riscurilor neclinice evaluat pe probabilitate și impact.', 'Continuitatea utilităților vitale (apă, electricitate, termic, fluide medicinale) + surse de rezervă.', 'Măsuri dedicate pentru seism, incendiu, explozie, contaminare chimică/biologică, iradiere și pază.', 'Echipe și rezerve actualizate pentru dezastre naturale, catastrofe și mobilizare.']
+      },
+      { code: '01.09', ref: 'R01', page: 'Pag. 9–10', isNew: false, badge: '',
+        title: 'Mediul de îngrijire',
+        summary: 'Condiții hoteliere, intimitate, curățenie, sterilizare, alimentație sigură, lenjerie și protecția vulnerabililor.',
+        keywords: 'conditii hoteliere intimitate curatenie dezinfectie sterilizare alimentatie hrana lenjerie vulnerabili',
+        actionHint: 'Monitorizați calitatea curățeniei, sterilizării, circuitelor alimentare/lenjeriei și protecția pacienților vulnerabili.',
+        points: ['Condiții hoteliere adaptate pacientului, intimitate și circuite sigure.', 'Organizarea și monitorizarea curățeniei, dezinfecției și asumarea calității sterilizării.', 'Alimentație adecvată patologiei și circuite igienice pentru hrană și lenjerie.', 'Identificarea și protecția pacienților vulnerabili împotriva abuzului, neglijării și exploatării.']
+      },
+      { code: '01.10', ref: 'R01', page: 'Pag. 10', isNew: true, badge: 'Nou · Mediu',
+        title: 'Sustenabilitate de mediu și reziliență climatică',
+        summary: 'Plan strategic verde: reducerea emisiilor de carbon, tranziție la energie regenerabilă și reducerea risipei.',
+        keywords: 'sustenabilitate mediu climat carbon emisii regenerabile energie apa risipa ecologic verde',
+        actionHint: 'Elaborați Planul Strategic de Sustenabilitate cu ținte de reducere CO₂ și monitorizați consumul de energie/apă/medicamente.',
+        points: ['Plan strategic de sustenabilitate cu obiective măsurabile de reducere a emisiilor de carbon și tranziție la surse regenerabile.', 'Monitorizarea impactului de mediu și a vulnerabilității serviciilor la factorii climatici.', 'Monitorizarea consumurilor (energie, apă, materiale, medicamente) și reducerea risipei.']
+      },
+      { code: '01.11', ref: 'R01', page: 'Pag. 10', isNew: true, badge: 'Nou · AI & Digital',
+        title: 'Riscuri informaționale, digitale și sisteme AI',
+        summary: 'Inventar sisteme digitale/AI, GDPR, supraveghere umană obligatorie, bias-uri algoritmice și alternative non-digitale.',
+        keywords: 'ai inteligenta artificiala digital aplicatii gdpr supraveghere umana bias algoritm non-digital securitate cibernetica',
+        actionHint: 'Inventariați toate sistemele digitale și AI, evaluați riscurile/GDPR și stabiliți reguli clare de supraveghere umană.',
+        points: ['Inventarierea sistemelor digitale din îngrijire și evaluarea interoperabilității, riscurilor și impactului etic/GDPR.', 'Evidența sistemelor de Inteligență Artificială (clinice și administrative) și evaluarea impactului asupra siguranței.', 'Supraveghere umană obligatorie — decizia clinică rămâne în responsabilitatea profesionistului medical.', 'Monitorizarea bias-urilor algoritmice și asigurarea de alternative non-digitale.']
+      },
+
+      // R02 (16)
+      { code: '02.01', ref: 'R02', page: 'Pag. 10–12', isNew: false, badge: 'Urgențe & Psihiatrie',
+        title: 'Preluarea și planificarea îngrijirilor',
+        summary: 'Programări, servicii de urgență UPU/CPU, accesibilitate dizabilități, agresivitate și reguli de psihiatrie.',
+        keywords: 'preluare programari urgente upu cpu triaj dizabilitati agresivitate psihiatrie internare nevoluntara contentionare',
+        actionHint: 'Monitorizați indicatorii UPU/CPU, adaptați accesul pentru persoane cu dizabilități și actualizați protocoalele anti-agresivitate.',
+        points: ['Programări care nu afectează urgențele; recunoaștere precoce a deteriorării acute în orice structură.', 'UPU/CPU cu monitorizare indicatori (timp până la primul consult, staționare, reprezentare).', 'Adaptări pentru persoanele cu dizabilități și măsuri gradate pentru prevenirea/gestionarea agresivității.', 'Secții psihiatrie: internare nevoluntară legală, izolare/contenționare strict excepțională și supravegheată.']
+      },
+      { code: '02.02', ref: 'R02', page: 'Pag. 12', isNew: false, badge: '',
+        title: 'Evaluarea inițială a pacientului',
+        summary: 'Stabilirea regimului de rezolvare, factori psiho-sociali și evaluarea/ameliorarea durerii de la primul contact.',
+        keywords: 'evaluare initiala ambulator spitalizare zi continuu durere factori sociali investigatii',
+        actionHint: 'Asigurați documentarea evaluării durerii de la primul contact și a factorilor psiho-sociali în foaia de observație.',
+        points: ['Decizia regimului de rezolvare (ambulator / zi / continuă) și orientarea cazurilor ce depășesc competența.', 'Reglementarea recunoașterii sau repetării investigațiilor din alte unități.', 'Identificarea factorilor psiho-emoționali și socio-economici.', 'Identificarea, evaluarea și ameliorarea durerii încă de la primul contact.']
+      },
+      { code: '02.03', ref: 'R02', page: 'Pag. 12–13', isNew: true, badge: 'STIMA & Telemedicină',
+        title: 'Practica medicală integrată și continuitatea îngrijirilor',
+        summary: 'Protocoale bazate pe dovezi, comisie oncologică, plan îngrijire STIMA, telemedicină și acces echitabil non-digital.',
+        keywords: 'protocoale dovezi interdisciplinar oncologie bcr stima plan ingrijire telemedicina non-digital fisa externare',
+        actionHint: 'Actualizați protocoalele clinice, implementați planul de îngrijire conform ghidului STIMA și reglementați telemedicina.',
+        points: ['Protocoale operaționale bazate pe dovezi, evaluate periodic; depistare BCR și comisie multidisciplinară oncologică.', 'Plan de îngrijire individualizat întocmit de asistentul medical/moașă conform ghidului STIMA (02.03.04) + Fișă la externare.', 'Reglementarea telemedicinei și monitorizării la distanță (consimțământ, protecția datelor, securitate).', 'Alternative funcționale non-digitale pentru persoanele vârstnice, cu dizabilități sau fără acces digital.']
+      },
+      { code: '02.04', ref: 'R02', page: 'Pag. 13–14', isNew: false, badge: 'Opțional · Neonatologie',
+        title: 'Conceptul „Prieten al copilului”',
+        summary: 'Promovarea alăptării, contact imediat mamă-nou-născut, screening neonatal și securitate în zonele de nou-născuți.',
+        keywords: 'copil nou-nascut neonatologie alaptare san obstetrica screening hipotermie hipoglicemie securitate',
+        actionHint: 'Verificați protocoalele de alăptare, screening neonatal, hipotermie/hipoglicemie și securitatea accesului în neonatologie.',
+        points: ['Politică de promovare a alăptării, contact imediat mamă-nou-născut și îngrijire împreună.', 'Prevenirea bolilor infectocontagioase și depistarea malformațiilor/deficiențelor.', 'Măsuri de securitate specifice în zonele de nou-născuți și protocoale pentru hipotermie, hipoglicemie și screening.']
+      },
+      { code: '02.05', ref: 'R02', page: 'Pag. 14–17', isNew: false, badge: 'Paraclinic',
+        title: 'Serviciile paraclinice (LAM, Imagistică, Anatomie Patologică)',
+        summary: 'Control calitate pre/analitic/postanalitic în LAM, radioprotecție imagistică și trasabilitate completă biopsii.',
+        keywords: 'paraclinic laborator lam analize imagistica radiologie radioprotectie anatomie patologica trasabilitate externalizare deseuri',
+        actionHint: 'Verificați controlul intern/extern în LAM, comunicarea valorilor critice, radioprotecția și trasabilitatea în anatomie patologică.',
+        points: ['LAM: etapele pre/analitic/postanalitic, control intern/extern, comunicare valori critice, externalizare și deșeuri.', 'Imagistică: protocoale specifice, 2 identificatori pacient, radioprotecție, prevenire căderi și răspuns urgențe.', 'Anatomie patologică: trasabilitate verificabilă a produselor biologice de la recoltare până la arhivare.']
+      },
+      { code: '02.06', ref: 'R02', page: 'Pag. 17–18', isNew: false, badge: 'Opțional · Dializă',
+        title: 'Nefrologie și dializă',
+        summary: 'Monitorizarea BCR, decizie comună TSFR și raportare online în timp real către Registrul Renal Român.',
+        keywords: 'nefrologie dializa bcr rinichi hemodializa tsfr registru renal anemie infectii nutritie',
+        actionHint: 'Asigurați raportarea online către Registrul Renal Român și monitorizarea anemiei, metabolismului mineral și riscului infecțios.',
+        points: ['Tratarea și pregătirea pacienților cu BCR pentru tratament de supleere renală (TSFR) de comun acord cu pacientul.', 'Transmitere online în timp real a parametrilor către Registrul Renal Român.', 'Controlul anemiei, metabolismului mineral, acidozei, riscului infecțios, nutriției și autonomiei pacientului.']
+      },
+      { code: '02.07', ref: 'R02', page: 'Pag. 18', isNew: false, badge: 'Opțional · Radioterapie',
+        title: 'Radioterapie și/sau medicină nucleară',
+        summary: 'Dotare specifică, reguli de bună practică și audit clinic regulat în tratamentul oncologic.',
+        keywords: 'radioterapie medicina nucleara oncologie audit clinic radiatii',
+        actionHint: 'Definiți limitele serviciului și efectuați audit clinic regulat cu diseminarea rezultatelor.',
+        points: ['Dotare și reguli de bună practică adaptate nevoilor de diagnostic și tratament.', 'Definirea capacității/limitelor și orientarea către furnizori competenți când limitele sunt depășite.', 'Audit clinic regulat pe ambele specialități și îmbunătățirea continuă a siguranței.']
+      },
+      { code: '02.08', ref: 'R02', page: 'Pag. 18–19', isNew: false, badge: 'Opțional · Paliative',
+        title: 'Îngrijiri paliative și terminale',
+        summary: 'Controlul durerii, mediu apropiat de cel familial, echipă interdisciplinară și respectarea demnității.',
+        keywords: 'paliative terminale boli cronice progresive durere demnitate familie echipa interdisciplinara',
+        actionHint: 'Implementați scale standardizate pentru starea terminală, pregătirea recunoscută a echipei și suportul familiei.',
+        points: ['Identificarea promptă a nevoilor paliative, controlul durerii/simptomelor și personal pregătit.', 'Infrastructură adaptată dependenței crescute, respectând intimitatea și mediul familial.', 'Echipă interdisciplinară, scale standardizate pentru starea terminală, comunicare cu familia și sănătatea personalului.']
+      },
+      { code: '02.09', ref: 'R02', page: 'Pag. 19', isNew: false, badge: 'Farmacie',
+        title: 'Utilizarea medicamentelor',
+        summary: 'Reguli de prescriere, sprijinul farmacistului clinician, trasabilitate și medicația din studii clinice.',
+        keywords: 'medicamente farmacie prescriere farmacist clinician trasabilitate studii clinice',
+        actionHint: 'Verificați circuitul și trasabilitatea medicamentelor, colaborarea cu farmacistul clinician și stocarea conformă.',
+        points: ['Reguli clare de prescriere cunoscute pe secții și farmacie, cu sprijinul farmacologului/farmacistului clinician.', 'Organizarea și dotarea farmaciei conform legii pentru susținerea trasabilității.', 'Gestionarea securizată a medicației din studiile clinice.']
+      },
+      { code: '02.10', ref: 'R02', page: 'Pag. 19–20', isNew: false, badge: 'Antibiotice',
+        title: 'Bune practici de antibioticoterapie',
+        summary: 'Politică de antibioticoterapie, medic responsabil, prescriere pe ghiduri/antibiogramă și monitorizare rezistență.',
+        keywords: 'antibiotice antibioticoterapie antibioticorezistenta antibiograma microbiologie consum profilaxie',
+        actionHint: 'Desemnați medicul responsabil, monitorizați consumul de antibiotice pe secții și colaborarea microbiologie–SPLIAAM–farmacie.',
+        points: ['Politică de antibioticoterapie, medic responsabil și prescriere conform ghidurilor și antibiogramei.', 'Durata prescrierii documentată și trasabilitatea utilizării antibioticelor.', 'Monitorizarea consumului/antibioticorezistenței și colaborarea microbiologie – SPLIAAM – farmacie – clinicieni.']
+      },
+      { code: '02.11', ref: 'R02', page: 'Pag. 20–21', isNew: false, badge: 'IAAM · OMS',
+        title: 'Prevenirea și controlul infecțiilor (IAAM)',
+        summary: 'Program integrat bazat pe ghiduri OMS, igiena mâinilor, calitatea aerului, sterilizare și risc infecțios.',
+        keywords: 'iaam infectii nosocomiale spliaam oms igiena mainilor aer sterilizare bloc alimentar transfer colonizati',
+        actionHint: 'Implementați programul IAAM conform ghidurilor OMS, monitorizați igiena mâinilor, aerul, sterilizarea și pacienții colonizați.',
+        points: ['Program propriu conform ghidurilor OMS: supraveghere, igiena mâinilor, curățenie/dezinfecție, deșeuri.', 'Supravegherea calității aerului, lucrărilor de renovare, sterilizării, lenjeriei și blocului alimentar.', 'Identificarea pacienților cu risc infecțios și comunicare la transferul pacienților colonizați/infectați.']
+      },
+      { code: '02.12', ref: 'R02', page: 'Pag. 21–22', isNew: true, badge: 'Siguranță Pacient',
+        title: 'Politica de siguranță a pacientului',
+        summary: 'Registru unic riscuri clinice, 2 identificatori, medicamente risc înalt, checklist chirurgical și prevenirea căderilor.',
+        keywords: 'siguranta pacientului riscuri clinice santinela near miss identificatori medicamente risc inalt psihotrope citostatice electroliti chirurgie checklist radioprotectie caderi transplant',
+        actionHint: 'Verificați aplicarea celor 2 identificatori, controlul medicamentelor cu risc înalt, checklist-ul chirurgical și analiza near-miss.',
+        points: ['Registru unic riscuri clinice, gestionarea evenimentelor santinelă, adverse și near-miss.', 'Identificarea pacientului prin minim 2 identificatori independenți înaintea oricărei proceduri/administrări.', 'Reguli stricte pentru medicamente risc înalt (LASA), psihotrope, citostatice și electroliți concentrați.', 'Predare-preluare standardizată, checklist chirurgical/anestezic, prevenire infecții plagă, căderi și transplant.']
+      },
+      { code: '02.13', ref: 'R02', page: 'Pag. 22–23', isNew: false, badge: 'Transfuzii',
+        title: 'Sânge și terapie transfuzională',
+        summary: 'Hemovigilență, prescriere conform Ghidului Național și trasabilitatea completă a produselor sanguine.',
+        keywords: 'sange transfuzie hemovigilenta componente sanguine trasabilitate ghid national',
+        actionHint: 'Asigurați trasabilitatea completă a unităților de sânge (inclusiv neadministrate) și respectarea Ghidului Național.',
+        points: ['Organizarea prescrierii, monitorizării terapiei transfuzionale și hemovigilenței.', 'Prescrierea conform Ghidului Național de utilizare rațională a sângelui.', 'Trasabilitatea completă a produselor eliberate, inclusiv a celor care nu au fost administrate.']
+      },
+      { code: '02.14', ref: 'R02', page: 'Pag. 23', isNew: true, badge: 'Nou · PROMs',
+        title: 'Auditul clinic',
+        summary: 'Program prioritar de audit clinic, echipe multidisciplinare și utilizarea obligatorie a indicatorilor PROMs.',
+        keywords: 'audit clinic proms rezultate raportate pacient echipe multidisciplinare medici asistenti farmacisti protocoale',
+        actionHint: 'Constituiți echipe multidisciplinare de audit clinic (medici, asistenți, farmaciști) și integrați indicatorii PROMs.',
+        points: ['Program de audit clinic priorizat pe riscuri și variația practicii, integrat în SMCSS.', 'Echipele includ obligatoriu medici, asistenți medicali și farmaciști și utilizează indicatori PROMs.', 'Misiuni suplimentare la evenimente adverse; recomandările îmbunătățesc protocoalele clinice.']
+      },
+      { code: '02.15', ref: 'R02', page: 'Pag. 23', isNew: false, badge: '',
+        title: 'Încheierea procesului de îngrijire',
+        summary: 'Estimarea externării de la internare, continuitate post-externare și proceduri demne în stări critice/deces.',
+        keywords: 'externare continuitate stari critice deces apartinatori demnitate spiritual',
+        actionHint: 'Documentați estimarea externării, continuitatea post-externare și protocolul de comunicare/demnitate în stări critice.',
+        points: ['Estimarea momentului externării de la internare, actualizată pe parcurs.', 'Proceduri de externare și asigurarea continuității îngrijirilor post-externare.', 'Alertarea aparținătorilor la degradare/deces și respectarea demnității și convingerilor spirituale.']
+      },
+      { code: '02.16', ref: 'R02', page: 'Pag. 23–24', isNew: true, badge: 'ATI Dedicat',
+        title: 'Anestezie, sedare și structuri ATI',
+        summary: 'Conformitatea spațiilor/circuitelor ATI, mentenanța aparaturii critice și protocoale perioperatorii.',
+        keywords: 'ati anestezie sedare terapie intensiva aparatura critica perioperator mentenanta circuite',
+        actionHint: 'Planificați audituri tehnico-sanitare și microbiologice în ATI și verificați mentenanța echipamentelor critice.',
+        points: ['Audituri tehnico-sanitare, mentenanță și controale microbiologice programate în structurile ATI.', 'Menținerea echipamentelor medicale critice în stare de funcționare și siguranță tehnică.', 'Practică standardizată, instrumente de prevenire a erorilor perioperatorii și corecție proactivă.']
+      },
+
+      // R03 (3)
+      { code: '03.01', ref: 'R03', page: 'Pag. 24', isNew: false, badge: 'Consimțământ',
+        title: 'Autonomia pacientului',
+        summary: 'Consimțământ informat și voluntar fără presiuni, gestionarea barierelor de comunicare și confidențialitate.',
+        keywords: 'autonomie consimtamant acord informat bariere comunicare confidentialitate secret profesional viata privata',
+        actionHint: 'Verificați formularele legale de acord informat, timpul acordat pacientului și procedurile de confidențialitate.',
+        points: ['Formulare legale de acord, timp adecvat pentru întrebări și decizie liberă fără constrângeri.', 'Identificarea și gestionarea barierelor de comunicare; evaluarea eficacității informării.', 'Proceduri unitare de confidențialitate/secret profesional și verificarea identității înainte de comunicarea datelor.']
+      },
+      { code: '03.02', ref: 'R03', page: 'Pag. 24–25', isNew: true, badge: 'Etică & Foto/Video',
+        title: 'Echitate, justiție socială și drepturile pacienților',
+        summary: 'Prevenirea discriminării, Consiliul Etic, a doua opinie, reguli stricte foto/video și etică în cercetare.',
+        keywords: 'echitate discriminare consiliu etic documente a doua opinie mass media foto video dispozitive personale cercetare invatamant',
+        actionHint: 'Realizați analiza anuală de risc etic, reglementați strict înregistrările foto/video (inclusiv telefoane personale) și accesul la a doua opinie.',
+        points: ['Analiză anuală de risc etic de către Consiliul Etic și analiza feedback-ului pacienților.', 'Acces facil la documentele medicale și la a doua opinie medicală fără bariere.', 'Protecția față de mass-media și reglementarea pe scopuri a filmării/fotografierii (inclusiv pe dispozitive personale).', 'Reglementarea învățământului medical și cercetării cu respectarea drepturilor pacientului.']
+      },
+      { code: '03.03', ref: 'R03', page: 'Pag. 25–26', isNew: false, badge: 'Competențe',
+        title: 'Principiile binefacerii și nonvătămării',
+        summary: 'Practică strict în limitele competențelor profesionale și conduita legală în urgențe vitale excepționale.',
+        keywords: 'binefacere nonvatamare competenta profesionala limite sprijin urgenta escaladare prim ajutor',
+        actionHint: 'Corelați fișele de post cu competențele și instruiți personalul privind escaladarea și conduita în urgențe ce depășesc competența.',
+        points: ['Atribuirea activităților clinice strict conform specialității, competențelor și experienței.', 'Efectuarea intervențiilor doar când există competențele, resursele și suportul necesare.', 'Instruirea personalului pentru recunoașterea limitelor competenței, escaladare, prim ajutor și solicitarea sprijinului.']
+      }
+    ];
+
+    const STAGES = [
+      { num: 1, short: 'Înregistrare', title: 'Etapa 1: Înregistrarea Unității Sanitare', articles: 'Art. 7', pages: 'Pag. 33',
+        deadline: 'Creare cont CaPeSaRo: max. 10 zile lucrătoare · Actualizări profil: 10 zile lucrătoare',
+        hospital: ['Transmite către ANMCS: ASF, declarația managerului privind implementarea SMCSS și fișa de înregistrare.', 'Actualizează dinamic profilul unității în CaPeSaRo la orice modificare (în 10 zile lucrătoare).'],
+        anmcs: ['Confirmă primirea documentelor complete și ia unitatea sanitară în evidență.', 'Creează contul CaPeSaRo și transmite credențialele de acces în 10 zile lucrătoare.'],
+        deliverables: ['Cont activ CaPeSaRo', 'Profilul Unității Sanitare'],
+        note: 'Înregistrarea marchează inițierea implementării SMCSS și nu obligă la intrarea imediată în acreditare (cu excepția obligațiilor legale).'
+      },
+      { num: 2, short: 'Înscriere', title: 'Etapa 2: Înscrierea în Procesul de Acreditare', articles: 'Art. 8–9', pages: 'Pag. 33–34',
+        deadline: 'Completare documente invalide: 3 zile lucrătoare · Eliberare adeverință: max. 10 zile lucrătoare',
+        hospital: ['Încarcă în CaPeSaRo: documente SMCSS, echipa de coordonare pe sectoare, politica de calitate, FIS-SD, ASF (cu anexe), aviz structură, organigramă.', 'Depune Cererea de înscriere și semnează Contractul cadru ANMCS-US.', 'Informează CAS în cazul obținerii unei adeverințe actualizate (la o nouă ASF).'],
+        anmcs: ['Validează documentele (sau cere completări în 3 zile lucrătoare) și deblochează cererea + contractul.', 'Semnează Contractul ANMCS-US și emite Adeverința de înscriere în max. 10 zile lucrătoare.'],
+        deliverables: ['Contract cadru ANMCS-US', 'Adeverința de înscriere'],
+        note: 'Unitățile cu adeverință dar fără contract au 10 zile lucrătoare de la notificare pentru actualizare, altfel sunt excluse.'
+      },
+      { num: 3, short: 'Planificare', title: 'Etapa 3: Planificarea în Planul Multianual', articles: 'Art. 10', pages: 'Pag. 34–35',
+        deadline: 'Max. 20 US/lună · Min. 12 luni de la înscriere pt. US noi · Modificare comunicată în 15 zile',
+        hospital: ['Consultă perioada estimată a evaluării și a vizitei în CaPeSaRo și pe site-ul ANMCS.', 'Poate solicita o singură dată replanificarea, motivat și cu documente doveditoare.'],
+        anmcs: ['Aplică 7 criterii succesive (max. 20 US/lună, max. 50% evaluatori activi/specialitate, continuitate certificate).', 'Aprobă planul prin Colegiul Director; poate replanifica la epidemii/dezastre/lipsă resurse fără costuri pt. US.'],
+        deliverables: ['Plan Multianual de Acreditare aprobat', 'Interval estimat vizită în CaPeSaRo'],
+        note: 'Pentru spitalele înscrise prima dată, vizita de evaluare nu poate avea loc mai devreme de 12 luni de la înscriere.'
+      },
+      { num: 4, short: 'Pregătire', title: 'Etapa 4: Pregătirea Evaluării în Vederea Acreditării', articles: 'Art. 11–14', pages: 'Pag. 35–37',
+        deadline: 'Durată min. 6 luni · FAE inițial: 30 zile · A doua aplicare FAE: -60 zile · Remediere DOS: 30 zile',
+        hospital: ['Completează FIS-SD, FAE inițial (în 30 zile de la contract) și actualizează Planul de Management al Calității.', 'Semnează Actul Adițional (taxa de acreditare calculată pe FCD) și achită tranșele.', 'Încarcă DOS, „Documentele calității”, lista coordonatorilor/interlocutorilor și a doua aplicare FAE (cu min. 60 zile înainte).', 'Demonstrează organizarea legală și sigură a activității transfuzionale.'],
+        anmcs: ['Acordă consiliere metodologică la cerere (fără a proiecta soluții sau a anticipa rezultatul).', 'Calculează FCD și taxa de acreditare; verifică DOS prin RRA și emite Raportul de Conformitate.', 'Dacă raportul e nefavorabil, acordă 30 zile remediere; avizul favorabil înscrie US pe Lista UEAS.'],
+        deliverables: ['Act Adițional taxă', 'FAE inițial & A doua aplicare FAE', 'Raport de Conformitate favorabil → Lista UEAS'],
+        note: 'La începerea sub-etapei pre-vizită, CaPeSaRo blochează încărcarea de noi documente în „Documentele calității”.'
+      },
+      { num: 5, short: 'Evaluare', title: 'Etapa 5: Evaluarea Propriu-zisă (Pre-vizită · Vizită · Post-vizită)', articles: 'Art. 15–22', pages: 'Pag. 37–47',
+        deadline: 'Program: 4 zile · PRE: 5 zile lucr. · Obiecțiuni: 5 zile lucr. · Soluționare & RE: 5+5 zile · Predare DE: 5 zile',
+        subStages: [
+          { name: 'Pre-vizită', desc: 'Analiză CaPeSaRo, program vizită (4 zile), instructaj CE, pre-validare DOS (cu 4 zile înainte).' },
+          { name: 'Vizită propriu-zisă', desc: 'Deschidere (60 min), verificări reale pe teren, informări zilnice (30 min), închidere (60 min).' },
+          { name: 'Post-vizită', desc: 'PRE (5 zile) → Obiecțiuni US (5 zile) → Răspuns alt evaluator (5 zile) → RE (5 zile) → Predare DE (5 zile).' }
+        ],
+        hospital: ['Desemnează persoanele de legătură și asigură accesul CE fără perturbarea actului medical.', 'Participă la ședințele de deschidere (60 min), zilnice (30 min) și închidere (60 min).', 'Poate formula obiecțiuni la PRE în 5 zile lucrătoare, exclusiv pe EM fără consens.'],
+        anmcs: ['Constituie aleatoriu Comisia de Evaluare (CE) fără conflicte de interese, asistată de Coordonatorul CE.', 'Aplică tehnicile de evaluare pe procese reale, emite PRE, soluționează obiecțiunile și transmite RE.', 'Comisia de Recepție (CR) recepționează Dosarul de Evaluare (DE).'],
+        deliverables: ['Program vizită & Minute', 'PRE & RE', 'Dosarul de Evaluare (DE)'],
+        note: 'Evaluatorii NU acordă punctaje și NU comunică categoria de acreditare la ședința de închidere!'
+      },
+      { num: 6, short: 'Raport & Certificat', title: 'Etapa 6: Raportul de Acreditare & Eliberarea Certificatului', articles: 'Art. 23–24', pages: 'Pag. 47–49',
+        deadline: 'Durată: 3 luni · Obiecțiuni/Contestație PRA: 5 zile lucr. · Certificat: 30 zile · Afișare însemne: 30 zile',
+        hospital: ['Analizează Proiectul Raportului de Acreditare (PRA) primit în CaPeSaRo.', 'În 5 zile lucrătoare, alege o singură cale: Obiecțiuni (pt. EM modificate de ANMCS) SAU Contestație (pt. alte elemente).', 'Afișează însemnele acreditării în max. 30 zile de la publicarea listei în M.Of.'],
+        anmcs: ['Rulează Algoritmul Național Unic pe datele din DE și emite PRA.', 'Soluționează obiecțiunile/contestațiile prin comisie independentă; Colegiul Director aprobă RA.', 'Emite Ordinul Președintelui ANMCS, publică în M.Of. și eliberează Certificatul & Suplimentul descriptiv (30 zile).'],
+        deliverables: ['PRA & RA', 'Ordin Președinte ANMCS (M.Of.)', 'Certificat de Acreditare & Supliment descriptiv'],
+        note: 'Rezultatul (categorie, punctaj, EM NC/CP) se comunică autorității tutelare, DSP, CAS și Ministerului Sănătății.'
+      },
+      { num: 7, short: 'Monitorizare', title: 'Etapa 7: Monitorizarea Post-Acreditare', articles: 'Art. 30–35', pages: 'Pag. 53–55',
+        deadline: 'Pe toată valabilitatea certificatului · Comunicare rezultate monitorizare: max. 30 zile',
+        hospital: ['Menține condițiile de acreditare, realizează autoevaluări periodice și actualizează Planul de Management al Calității.', 'Raportează indicatorii, notifică modificările structurale și comunică evenimentele adverse.', 'Folosește datele curente, fără birocrație paralelă.'],
+        anmcs: ['Realizează monitorizare documentară, prin indicatori, tematică, la distanță, prin vizită anunțată sau inopinată (motivată).', 'Verifică cerințele esențiale (nu se compensează) și progresul proporțional cu categoria.', 'Comunică rezultatele în 30 de zile (recomandări, plan măsuri, intensificare sau reevaluare).'],
+        deliverables: ['Rapoarte de monitorizare ANMCS', 'Plan de management al calității actualizat'],
+        note: 'Monitorizarea nu recalculează automat nivelul de implementare fără o procedură de reevaluare.'
+      },
+      { num: 8, short: 'Reevaluare', title: 'Etapa 8: Reevaluarea, Reacreditarea & Suspendarea', articles: 'Art. 27, 36–40', pages: 'Pag. 51–55',
+        deadline: 'Suspendare: max. 6 luni · Plan măsuri: 5 zile lucr. · Afișare „suspendată”: 3 zile · Raportare: săptămânală',
+        hospital: ['Poate solicita reevaluarea sau reacreditarea.', 'În caz de suspendare: afișează „acreditare suspendată” în 3 zile, depune planul în 5 zile lucrătoare și raportează săptămânal.'],
+        anmcs: ['Dispune reevaluarea (modificări structurale/profil, inițiativa ANMCS, cerere US/autorități) — reia etapele de la Art. 10.', 'Poate suspenda acreditarea (max. 6 luni) și o poate retrage dacă deficiențele nu sunt remediate la termen.'],
+        deliverables: ['Ordin de reevaluare / modificare categorie (M.Of.)', 'Ordin suspendare / încetare / retragere acreditare'],
+        note: 'Reevaluarea nu poate fi limitată la câteva standarde; utilizează aceleași reguli, ponderi și algoritm ca evaluarea inițială.'
+      }
+    ];
+
+    const TECHNIQUES = [
+      { title: '1. Analiza documentelor', desc: 'Verificarea procedurilor, registrelor și înregistrărilor curente din CaPeSaRo sau de pe teren.', rule: 'Rol de dovadă și trasabilitate; nu înlocuiește verificarea practicii reale.' },
+      { title: '2. Interviul confidențial', desc: 'Discuție directă cu personalul, managementul și pacienții în timpul vizitei.', rule: 'Confidențial, FĂRĂ înregistrare audio-video; participare voluntară pacient; fără sancțiuni disciplinare.' },
+      { title: '3. Observarea directă', desc: 'Constatarea la fața locului a desfășurării reale a proceselor clinice și administrative.', rule: 'Fără perturbarea actului medical și cu respectarea strictă a confidențialității/GDPR.' },
+      { title: '4. Focus-grupul', desc: 'Discuție structurată limitată în timp cu un grup de reprezentanți ai spitalului și evaluatori.', rule: 'Opiniile sunt raportate exclusiv agregat, fără identificarea persoanelor.' },
+      { title: '5. Simularea proceselor', desc: 'Testarea practică a răspunsului la riscuri și situații de urgență.', rule: 'Anunțată la deschidere (fără oră/loc), FĂRĂ pacienți reali și fără evaluarea individuală a angajaților.' },
+      { title: '6. Tehnica Tracer', desc: 'Urmărirea pas cu pas a parcursului unui pacient sau al unui proces medical în spital.', rule: 'Evaluează dinamica îngrijirilor, interfețele dintre secții, continuitatea și siguranța reală.' }
+    ];
+
+    const CRITICAL_SITUATIONS = [
+      { id: 'crit1', short: 'Transfer contaminat salon ↔ bloc operator', text: 'Transferul pacientului între salon și blocul operator în condiții care nu previn contaminarea.', action: 'Securizați imediat circuitul curat/murdar și procedura de transport aseptic către blocul operator.' },
+      { id: 'crit2', short: 'Acces neautorizat în Bloc Operator / ATI / Neonatologie', text: 'Posibilitatea accesului persoanelor neautorizate în blocul operator, în structurile ATI ori în secția de neonatologie.', action: 'Restricționați fizic și procedurizați controlul accesului (card/interfon/pază) în Bloc Operator, ATI și Neonatologie.' },
+      { id: 'crit3', short: 'Lipsă dotări / trasabilitate sânge', text: 'Lipsa dotărilor indispensabile pentru utilizarea în siguranță a sângelui și produselor din sânge sau imposibilitatea demonstrării trasabilității.', action: 'Asigurați urgent dotările UTS, echipamentele de păstrare/verificare și registrul complet de trasabilitate a sângelui.' },
+      { id: 'crit4', short: 'Deteriorări / infiltrații grave spații și instalații', text: 'Deteriorările, infiltrațiile ori deficiențele spațiilor și instalațiilor care generează un risc grav și imediat.', action: 'Remediați urgent infiltrațiile, degradările structurale și defecțiunile instalațiilor cu risc imediat.' },
+      { id: 'crit5', short: 'Grupuri sanitare nefuncționale / insalubre', text: 'Existența unor grupuri sanitare nefuncționale sau menținute în condiții care favorizează transmiterea infecțiilor.', action: 'Reparați și igienizați imediat grupurile sanitare nefuncționale și verificați graficele de dezinfecție.' },
+      { id: 'crit6', short: 'Acces necontrolat la panouri electrice / oxigen / gaze', text: 'Accesul necontrolat la panourile electrice, sursele de oxigen, gazele medicale ori alte instalații periculoase.', action: 'Încuiați și semnalizați de urgență panourile electrice, stațiile de oxigen și instalațiile de gaze medicale.' },
+      { id: 'crit7', short: 'Deșeuri medicale cu risc grav și imediat', text: 'Gestionarea sau depozitarea necorespunzătoare a deșeurilor medicale, atunci când situația generează un risc grav și imediat.', action: 'Securizați spațiul de depozitare temporară, colectarea pe coduri de culoare și evacuarea deșeurilor periculoase.' }
+    ];
+
+    const MANDATORY_CONDITIONS = [
+      { id: 'm1', page: 'Pag. 33', title: 'ASF valabilă + aviz structură organizatorică & organigramă actualizate', desc: 'Autorizația Sanitară de Funcționare (inclusiv anexe), avizul privind structura și organigrama aprobată încărcate în CaPeSaRo.', action: 'Actualizați și încărcați în CaPeSaRo ASF valabilă, avizul de structură și organigrama aprobată.' },
+      { id: 'm2', page: 'Pag. 33', title: 'SMCSS înființată și funcțională + echipă de coordonare pe sectoare', desc: 'Documente care atestă existența/funcționarea SMCSS și nominalizarea echipei de coordonare la nivelul fiecărui sector.', action: 'Emiteți deciziile de organizare SMCSS și nominalizați coordonatorii de calitate și interlocutorii pe fiecare sector.' },
+      { id: 'm3', page: 'Pag. 33, 36', title: 'Politica de calitate aprobată + FAE inițial & Plan de management al calității', desc: 'Politica de calitate asumată de conducere, FAE inițial completat (în 30 zile) și Planul de management al calității în CaPeSaRo.', action: 'Aprobați Politica de calitate, completați FAE inițial și încărcați Planul de Management al Calității în CaPeSaRo.' },
+      { id: 'm4', page: 'Pag. 37', title: 'Activitate transfuzională organizată legal și sigur', desc: 'Unitate de Transfuzie Sanguină (UTS) autorizată sau mecanism permis de legislația specială, corespunzător serviciilor furnizate.', action: 'Regularizați autorizarea UTS sau mecanismul legal de asigurare a terapiei transfuzionale.' },
+      { id: 'm5', page: 'Pag. 37', title: 'Documente DOS validate și taxa de acreditare achitată conform actului adițional', desc: 'Documentele Obligatorii Solicitate (DOS) validate de ANMCS și tranșele taxei de acreditare achitate la termen.', action: 'Completați documentele DOS în CaPeSaRo pentru aviz favorabil și achitați tranșele taxei conform Actului Adițional.' }
+    ];
+
+    const PDF_SECTIONS = [
+      { pages: 'Pag. 1–2', title: 'Ordinul nr. 139/2026', desc: 'Aprobarea Ediției a III-a și a Metodologiei (unități cu paturi).', color: '#475569', tab: 'ansamblu' },
+      { pages: 'Pag. 3–10', title: 'Referința 01 (Strategic)', desc: '11 standarde (01.01–01.11), incl. Sustenabilitate & AI.', color: '#0F766E', tab: 'standarde', filter: 'R01' },
+      { pages: 'Pag. 10–24', title: 'Referința 02 (Clinic)', desc: '16 standarde (02.01–02.16): UPU, LAM, IAAM, Siguranță, ATI.', color: '#0284C7', tab: 'standarde', filter: 'R02' },
+      { pages: 'Pag. 24–26', title: 'Referința 03 (Etică)', desc: '3 standarde (03.01–03.03): Autonomie, Drepturi, Nonvătămare.', color: '#4F46E5', tab: 'standarde', filter: 'R03' },
+      { pages: 'Pag. 27–32', title: 'Dispoziții & Principii', desc: 'Art. 1–6: Definiții, acronime, principii, 4 dimensiuni EM.', color: '#059669', tab: 'ghid' },
+      { pages: 'Pag. 33–37', title: 'Înregistrare & Pregătire', desc: 'Art. 7–14: CaPeSaRo, Contract, Plan multianual, FAE, DOS.', color: '#0F766E', tab: 'traseu', stage: 0 },
+      { pages: 'Pag. 37–47', title: 'Etapa de Evaluare', desc: 'Art. 15–22: CE, Pre-vizită, Vizită, Situații critice, PRE, RE.', color: '#0284C7', tab: 'traseu', stage: 4 },
+      { pages: 'Pag. 47–49', title: 'Raport & Algoritm', desc: 'Art. 23–24: PRA, Contestații, RA, Certificat, Algoritm Unic.', color: '#4F46E5', tab: 'traseu', stage: 5 },
+      { pages: 'Pag. 50–52', title: 'Excludere & Suspendare', desc: 'Art. 25–27: Retragere, excludere, suspendare max. 6 luni.', color: '#DC2626', tab: 'evaluare' },
+      { pages: 'Pag. 52–56', title: 'Tehnici & Monitorizare', desc: 'Art. 28–43: 6 tehnici, instrumente, monitorizare, reevaluare.', color: '#059669', tab: 'traseu', stage: 6 }
+    ];
+
+    const ACRONYMS = [
+      { code: 'ANMCS', full: 'Autoritatea Națională de Management al Calității în Sănătate', desc: 'Autoritatea publică ce elaborează standardele, evaluează și acreditează unitățile sanitare.', page: 'Pag. 27' },
+      { code: 'US', full: 'Unitate Sanitară (cu paturi)', desc: 'Spital de spitalizare continuă și/sau de zi înregistrat sau înscris în procesul de acreditare.', page: 'Pag. 27' },
+      { code: 'ASF', full: 'Autorizația Sanitară de Funcționare', desc: 'Document legal obligatoriu emis de DSP ce atestă funcționarea legală a unității sanitare.', page: 'Pag. 27' },
+      { code: 'CaPeSaRo', full: 'Aplicația „Calitate și Performanță în Sistemul Sănătății Publice din România”', desc: 'Platforma informatică oficială prin care se derulează întregul proces de acreditare.', page: 'Pag. 28' },
+      { code: 'SMCSS', full: 'Structura de Management al Calității Serviciilor de Sănătate', desc: 'Structura internă a spitalului ce coordonează metodologic calitatea și siguranța.', page: 'Pag. 27' },
+      { code: 'FAE', full: 'Fișa de Autoevaluare', desc: 'Formular completat în 2 etape („FAE inițial” și „a doua aplicare FAE”) pentru evaluarea internă a conformității.', page: 'Pag. 29' },
+      { code: 'DOS', full: 'Documente Obligatorii Solicitate', desc: 'Documente de legalitate, structură și siguranță verificate de ANMCS înainte de Lista UEAS.', page: 'Pag. 29' },
+      { code: 'FIS-SD', full: 'Fișa de Identificare a US – Structură Detaliată', desc: 'Formular CaPeSaRo cu datele de identificare și structura organizatorică/funcțională a spitalului.', page: 'Pag. 28' },
+      { code: 'FCD', full: 'Fișa de Calcul a Duratei Vizitei', desc: 'Documentul pe baza căruia se calculează orele-muncă ale evaluatorilor și valoarea taxei de acreditare.', page: 'Pag. 29' },
+      { code: 'CE', full: 'Comisia de Evaluare', desc: 'Echipă de evaluatori independenți ANMCS desemnați prin ordin pentru evaluarea unității sanitare.', page: 'Pag. 29' },
+      { code: 'LV', full: 'Liste de Verificare', desc: 'Formulare tipizate utilizate de evaluatori pentru colectarea dovezilor și stabilirea valențelor EM.', page: 'Pag. 27' },
+      { code: 'PRE', full: 'Proiectul Raportului de Evaluare', desc: 'Raport preliminar emis de CE în 5 zile lucrătoare după vizită, asupra căruia US poate depune obiecțiuni.', page: 'Pag. 28' },
+      { code: 'RE', full: 'Raportul de Evaluare', desc: 'Raportul final al Comisiei de Evaluare după soluționarea obiecțiunilor la PRE.', page: 'Pag. 28' },
+      { code: 'PRA', full: 'Proiectul Raportului de Acreditare', desc: 'Document ANMCS cu rezultatele Algoritmului Național și propunerea de încadrare în categorie.', page: 'Pag. 28' },
+      { code: 'RA', full: 'Raportul de Acreditare', desc: 'Documentul final aprobat de Colegiul Director, care stă la baza Ordinului de acreditare.', page: 'Pag. 28' },
+      { code: 'EM', full: 'Element Măsurabil', desc: 'Dimensiune operațională a unei cerințe (EM1 Capacitate, EM2 Implementare, EM3 Rezultate, EM4 Îmbunătățire).', page: 'Pag. 30' },
+      { code: 'IAAM', full: 'Infecții Asociate Asistenței Medicale', desc: 'Infecții nosocomiale prevenite și monitorizate printr-un program integrat (Standard 02.11).', page: 'Pag. 20' },
+      { code: 'STIMA', full: 'Ghidul STIMA (Standardizarea Îngrijirilor)', desc: 'Principiile de documentare standardizată a planului de îngrijire întocmit de asistentul medical/moașă (Std. 02.03.04).', page: 'Pag. 13' },
+      { code: 'PROMs', full: 'Patient-Reported Outcome Measures', desc: 'Indicatori de rezultate clinice raportate direct de pacient, obligatorii în auditul clinic (Std. 02.14).', page: 'Pag. 23' },
+      { code: 'TSFR', full: 'Tratament de Supleere a Funcției Renale', desc: 'Hemodializă, dializă peritoneală sau transplant renal pentru pacienții cu boală cronică de rinichi (Std. 02.06).', page: 'Pag. 17' },
+      { code: 'LAM', full: 'Laborator de Analize Medicale', desc: 'Structură paraclinică evaluată pe etapele preanalitică, analitică și postanalitică (Std. 02.05).', page: 'Pag. 14' },
+      { code: 'RRA', full: 'Responsabil Regional cu Acreditarea', desc: 'Angajat ANMCS desemnat pentru una dintre cele 8 regiuni; verifică DOS și emite Raportul de conformitate.', page: 'Pag. 27' },
+      { code: 'RMD', full: 'Responsabil cu Managementul Documentelor', desc: 'Evaluator membru al Comisiei de Evaluare responsabil cu gestionarea și predarea documentelor evaluării.', page: 'Pag. 27' }
+    ];
+
+    // =========================================================================
+    // 2. STARE APLICAȚIE & SALVARE LOCALSTORAGE (FAE)
+    // =========================================================================
+    const STORAGE_KEY = 'anmcs_editia3_fae_v1';
+
+    let currentHierarchyIdx = 0;
+    let currentStdFilter = 'all';
+    let expandedStandards = new Set();
+    let currentStageIdx = 0;
+    let currentFaeFilter = 'all';
+
+    function getDefaultFaeState() {
+      const today = new Date().toISOString().split('T')[0];
+      const stds = {};
+      STANDARDS.forEach(s => {
+        stds[s.code] = { val: '', em1: false, em2: false, em3: false, em4: false, note: '', owner: '', due: '' };
+      });
+      const crits = {};
+      CRITICAL_SITUATIONS.forEach(c => { crits[c.id] = 'ok'; });
+      const mand = {};
+      MANDATORY_CONDITIONS.forEach(m => { mand[m.id] = false; });
+      return {
+        hospitalName: '',
+        date: today,
+        manager: '',
+        mandatory: mand,
+        critical: crits,
+        standards: stds
+      };
+    }
+
+    let faeState = loadFaeState();
+
+    function loadFaeState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return getDefaultFaeState();
+        const parsed = JSON.parse(raw);
+        const def = getDefaultFaeState();
+        return {
+          ...def,
+          ...parsed,
+          mandatory: { ...def.mandatory, ...(parsed.mandatory || {}) },
+          critical: { ...def.critical, ...(parsed.critical || {}) },
+          standards: { ...def.standards, ...(parsed.standards || {}) }
+        };
+      } catch (e) {
+        return getDefaultFaeState();
+      }
+    }
+
+    function saveFaeState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(faeState));
+        const badge = document.getElementById('saveStatusBadge');
+        if (badge) {
+          badge.textContent = '✓ Salvat automat (' + new Date().toLocaleTimeString('ro-RO', { hour: '2-digit', minute: '2-digit' }) + ')';
+        }
+      } catch (e) { /* Ignore storage quota errors */ }
+    }
+
+    // =========================================================================
+    // 3. UTILITARE UI (TAB-URI, TOAST, NORMALIZARE)
+    // =========================================================================
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      const target = document.getElementById('panel-' + tabId);
+      if (target) target.classList.add('active');
+
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tab === tabId);
+      });
+
+      const nav = document.querySelector('.tabs-nav');
+      if (nav && window.scrollY > nav.offsetTop) {
+        window.scrollTo({ top: nav.offsetTop - 4, behavior: 'smooth' });
+      }
+    }
+
+    function normalizeText(str) {
+      return (str || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    let toastTimer = null;
+    function showToast(msg) {
+      const el = document.getElementById('toastMsg');
+      el.textContent = msg;
+      el.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => el.classList.remove('show'), 2800);
+    }
+
+    // =========================================================================
+    // 4. RENDER TAB 1 (IERARHIE)
+    // =========================================================================
+    function renderHierarchy() {
+      const list = document.getElementById('hierarchyButtons');
+      const detail = document.getElementById('hierarchyDetail');
+
+      list.innerHTML = HIERARCHY_LEVELS.map((lvl, idx) => `
+        <button class="hier-btn ${idx === currentHierarchyIdx ? 'active' : ''}" onclick="selectHierarchy(${idx})" style="margin-left:${Math.min(idx * 10, 40)}px;width:calc(100% - ${Math.min(idx * 10, 40)}px);">
+          <span class="hier-code" style="background:${lvl.color};">${lvl.code}</span>
+          <div style="flex:1;min-width:0;">
+            <div style="display:flex;justify-content:space-between;gap:8px;align-items:center;">
+              <strong style="font-size:14.5px;color:var(--text);">${lvl.name}</strong>
+              <span style="font-size:11px;font-weight:700;color:var(--text-light);">${lvl.page}</span>
+            </div>
+            <div style="font-size:12.5px;color:var(--text-muted);">${lvl.subtitle}</div>
+          </div>
+        </button>
+      `).join('');
+
+      const sel = HIERARCHY_LEVELS[currentHierarchyIdx];
+      detail.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+          <span class="badge-chip" style="background:${sel.color};color:#fff;padding:4px 10px;font-size:12px;">Nivel ${currentHierarchyIdx + 1} · Cod „${sel.code}”</span>
+          <span class="page-tag">${sel.page}</span>
+        </div>
+        <h3 style="font-size:20px;font-weight:800;color:var(--text);">${sel.name}</h3>
+        <p style="font-size:14px;color:#334155;margin-top:8px;">${sel.desc}</p>
+        <div class="hier-example">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.04em;color:${sel.color};margin-bottom:4px;">Exemplu real din PDF · ${sel.exCode}</div>
+          <p style="font-size:13.5px;color:var(--text);">${sel.exText}</p>
+        </div>
+      `;
+    }
+
+    function selectHierarchy(idx) {
+      currentHierarchyIdx = idx;
+      renderHierarchy();
+    }
+
+    // =========================================================================
+    // 5. RENDER TAB 2 (EXPLORATOR 30 STANDARDE)
+    // =========================================================================
+    function setStdFilter(filter) {
+      currentStdFilter = filter;
+      document.querySelectorAll('#stdFilterButtons .filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.filter === filter);
+      });
+      renderStandards();
+    }
+
+    function toggleStandardCard(code) {
+      if (expandedStandards.has(code)) expandedStandards.delete(code);
+      else expandedStandards.add(code);
+      renderStandards();
+    }
+
+    function toggleAllStandards(expand) {
+      if (expand) STANDARDS.forEach(s => expandedStandards.add(s.code));
+      else expandedStandards.clear();
+      renderStandards();
+    }
+
+    function renderStandards() {
+      const q = normalizeText(document.getElementById('stdSearchInput').value.trim());
+      const grid = document.getElementById('standardsGrid');
+
+      const filtered = STANDARDS.filter(s => {
+        if (currentStdFilter === 'R01' && s.ref !== 'R01') return false;
+        if (currentStdFilter === 'R02' && s.ref !== 'R02') return false;
+        if (currentStdFilter === 'R03' && s.ref !== 'R03') return false;
+        if (currentStdFilter === 'NEW' && !s.isNew) return false;
+        if (!q) return true;
+        return normalizeText(`${s.code} ${s.title} ${s.summary} ${s.keywords} ${s.points.join(' ')}`).includes(q);
+      });
+
+      document.getElementById('stdCountLabel').textContent = `Se afișează ${filtered.length} din ${STANDARDS.length} standarde`;
+
+      if (!filtered.length) {
+        grid.innerHTML = `<div class="section-card" style="grid-column:1/-1;text-align:center;"><strong>Niciun standard găsit.</strong><p style="font-size:13px;color:var(--text-muted);margin-top:6px;">Încearcă alt cuvânt cheie (ex: AI, ATI, burnout, antibiotice, dializă).</p></div>`;
+        return;
+      }
+
+      const refMeta = {
+        R01: { label: 'R01 Strategic', bg: 'var(--mint)', color: 'var(--teal)' },
+        R02: { label: 'R02 Clinic', bg: 'var(--blue-soft)', color: '#0369A1' },
+        R03: { label: 'R03 Etică', bg: 'var(--indigo-soft)', color: 'var(--indigo)' }
+      };
+
+      grid.innerHTML = filtered.map(s => {
+        const rm = refMeta[s.ref];
+        const open = expandedStandards.has(s.code);
+        return `
+          <article class="std-card ${open ? 'open' : ''}">
+            <button class="std-card-head" onclick="toggleStandardCard('${s.code}')">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px;">
+                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                  <span style="font-weight:800;font-size:14px;color:var(--text);">Std. ${s.code}</span>
+                  <span class="badge-chip" style="background:${rm.bg};color:${rm.color};">${rm.label}</span>
+                  ${s.badge ? `<span class="badge-chip" style="background:var(--emerald-soft);color:#065F46;">${s.badge}</span>` : ''}
+                </div>
+                <span class="page-tag">${s.page}</span>
+              </div>
+              <h3 style="font-size:15.5px;font-weight:800;color:var(--text);">${s.title}</h3>
+              <p style="font-size:13px;color:var(--text-muted);margin-top:6px;">${s.summary}</p>
+              <div style="margin-top:12px;font-size:12.5px;font-weight:700;color:var(--teal);display:flex;justify-content:space-between;">
+                <span>${open ? 'Ascunde criteriile principale' : 'Vezi criteriile principale'}</span>
+                <span>${open ? '▲' : '▼'}</span>
+              </div>
+            </button>
+            ${open ? `
+              <div class="std-card-body">
+                <strong style="font-size:11.5px;text-transform:uppercase;color:var(--text-light);">Criterii &amp; cerințe esențiale (${s.page}):</strong>
+                <ul>${s.points.map(p => `<li>${p}</li>`).join('')}</ul>
+              </div>
+            ` : ''}
+          </article>
+        `;
+      }).join('');
+    }
+
+    // =========================================================================
+    // 6. RENDER TAB 3 (STEPPER 8 ETAPE)
+    // =========================================================================
+    function renderStepper() {
+      const nav = document.getElementById('stepperNav');
+      const card = document.getElementById('stageDetailCard');
+
+      nav.innerHTML = STAGES.map((st, idx) => `
+        <button class="step-btn ${idx === currentStageIdx ? 'active' : idx < currentStageIdx ? 'done' : ''}" onclick="selectStage(${idx})">
+          <span class="step-num">${st.num}</span>
+          <strong style="font-size:11.5px;color:var(--text);line-height:1.25;">${st.short}</strong>
+          <span style="font-size:10px;color:var(--text-light);margin-top:2px;">${st.pages}</span>
+        </button>
+      `).join('');
+
+      const s = STAGES[currentStageIdx];
+      card.innerHTML = `
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:12px;padding-bottom:16px;margin-bottom:18px;border-bottom:1px solid var(--border-teal);">
+          <div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px;">
+              <span class="badge-chip" style="background:var(--teal);color:#fff;padding:4px 10px;font-size:12px;">Etapa ${s.num} / 8</span>
+              <span class="page-tag">${s.articles} · ${s.pages}</span>
+            </div>
+            <h3 style="font-size:20px;font-weight:800;color:var(--text);">${s.title}</h3>
+          </div>
+          <div style="background:var(--amber-soft);border:1px solid #FCD34D;border-radius:11px;padding:10px 14px;font-size:12.5px;color:#92400E;max-width:440px;">
+            <strong>⏱ Termene cheie:</strong> ${s.deadline}
+          </div>
+        </div>
+
+        ${s.subStages ? `
+          <div class="cards-3" style="margin-bottom:18px;gap:12px;">
+            ${s.subStages.map((sub, i) => `
+              <div style="background:#fff;border:1px solid #BAE6FD;border-radius:12px;padding:13px;">
+                <div style="font-size:11px;font-weight:800;color:var(--blue);text-transform:uppercase;">Sub-etapa 5.${i+1}</div>
+                <strong style="font-size:14px;display:block;margin-top:2px;">${sub.name}</strong>
+                <p style="font-size:12.5px;color:var(--text-muted);margin-top:4px;">${sub.desc}</p>
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
+
+        <div class="cards-2" style="gap:16px;">
+          <div style="background:#fff;border:1px solid var(--border-teal);border-radius:14px;padding:18px;">
+            <h4 style="font-size:14.5px;font-weight:800;color:var(--teal);margin-bottom:10px;">🏥 Ce face Spitalul (US)</h4>
+            <ul style="margin:0;padding-left:18px;font-size:13.5px;color:#334155;">
+              ${s.hospital.map(h => `<li style="margin-bottom:7px;">${h}</li>`).join('')}
+            </ul>
+          </div>
+          <div style="background:#fff;border:1px solid #BAE6FD;border-radius:14px;padding:18px;">
+            <h4 style="font-size:14.5px;font-weight:800;color:var(--blue);margin-bottom:10px;">🏛️ Ce face ANMCS / Comisia</h4>
+            <ul style="margin:0;padding-left:18px;font-size:13.5px;color:#334155;">
+              ${s.anmcs.map(a => `<li style="margin-bottom:7px;">${a}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;background:#fff;border:1px solid #A7F3D0;border-radius:12px;padding:13px 16px;">
+          <strong style="font-size:11.5px;text-transform:uppercase;color:var(--emerald);">📄 Livrabilele etapei:</strong>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+            ${s.deliverables.map(d => `<span class="badge-chip" style="background:var(--emerald-soft);color:#065F46;padding:4px 10px;font-size:12px;">${d}</span>`).join('')}
+          </div>
+        </div>
+        <p style="margin-top:12px;font-size:12.5px;color:var(--text-muted);background:#F1F5F9;padding:10px 14px;border-radius:10px;"><strong>💡 De reținut:</strong> ${s.note}</p>
+      `;
+
+      document.getElementById('stageProgressText').textContent = `Etapa ${currentStageIdx + 1} din ${STAGES.length}`;
+      document.getElementById('prevStageBtn').disabled = currentStageIdx === 0;
+      document.getElementById('nextStageBtn').disabled = currentStageIdx === STAGES.length - 1;
+    }
+
+    function selectStage(idx) { currentStageIdx = idx; renderStepper(); }
+    function navigateStage(d) {
+      const next = currentStageIdx + d;
+      if (next >= 0 && next < STAGES.length) { currentStageIdx = next; renderStepper(); }
+    }
+
+    // =========================================================================
+    // 7. RENDER TAB 4 (TEHNICI & ALERTE CRITICE)
+    // =========================================================================
+    function renderTab4() {
+      document.getElementById('techniquesGrid').innerHTML = TECHNIQUES.map(t => `
+        <div class="feature-card">
+          <div>
+            <h3 style="font-size:15.5px;font-weight:800;color:var(--text);">${t.title}</h3>
+            <p style="font-size:13px;color:var(--text-muted);margin-top:6px;">${t.desc}</p>
+          </div>
+          <div style="margin-top:12px;padding:9px 11px;border-radius:9px;background:#F8FAFC;border:1px solid var(--border);font-size:12px;color:#334155;">
+            <strong>Regulă cheie:</strong> ${t.rule}
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('criticalAlertList').innerHTML = CRITICAL_SITUATIONS.map((c, i) => `
+        <li>
+          <span class="alert-num">${i + 1}</span>
+          <div><strong>${c.short}:</strong> ${c.text}</div>
+        </li>
+      `).join('');
+    }
+
+    // =========================================================================
+    // 8. RENDER TAB 5 (HARTA PDF & ACRONIME)
+    // =========================================================================
+    function renderPdfMap() {
+      document.getElementById('pdfMapGrid').innerHTML = PDF_SECTIONS.map((sec, i) => `
+        <button class="pdf-card" onclick="jumpFromPdfMap(${i})">
+          <div>
+            <span class="badge-chip" style="background:${sec.color};color:#fff;padding:3px 8px;font-size:11px;">${sec.pages}</span>
+            <h3 style="font-size:14px;font-weight:800;margin-top:8px;color:var(--text);">${sec.title}</h3>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">${sec.desc}</p>
+          </div>
+          <span style="margin-top:10px;font-size:11.5px;font-weight:700;color:var(--teal);">Deschide →</span>
+        </button>
+      `).join('');
+    }
+
+    function jumpFromPdfMap(idx) {
+      const sec = PDF_SECTIONS[idx];
+      switchTab(sec.tab);
+      if (sec.filter) setStdFilter(sec.filter);
+      if (typeof sec.stage === 'number') selectStage(sec.stage);
+    }
+
+    function renderAcronyms() {
+      const q = normalizeText(document.getElementById('acronymSearchInput').value.trim());
+      const filtered = ACRONYMS.filter(a => !q || normalizeText(`${a.code} ${a.full} ${a.desc}`).includes(q));
+      document.getElementById('acronymCountLabel').textContent = `${filtered.length} din ${ACRONYMS.length} termeni`;
+      const grid = document.getElementById('acronymsGrid');
+      if (!filtered.length) {
+        grid.innerHTML = `<p style="grid-column:1/-1;text-align:center;color:var(--text-muted);padding:18px;">Niciun acronim găsit.</p>`;
+        return;
+      }
+      grid.innerHTML = filtered.map(a => `
+        <div style="border:1px solid var(--border);border-radius:13px;padding:15px;background:#FAFDFD;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <span class="badge-chip" style="background:var(--blue-soft);color:#0369A1;font-size:12.5px;padding:3px 9px;">${a.code}</span>
+            <span style="font-size:11px;font-weight:700;color:var(--text-light);">${a.page}</span>
+          </div>
+          <strong style="font-size:13px;color:var(--text);display:block;">${a.full}</strong>
+          <p style="font-size:12.5px;color:var(--text-muted);margin-top:4px;">${a.desc}</p>
+        </div>
+      `).join('');
+    }
+
+    // =========================================================================
+    // 9. TAB 6: FIȘĂ AUTOEVALUARE (FAE) — LOGICĂ, CALCUL LIVE & EXPORT
+    // =========================================================================
+    function syncMetaInputs() {
+      document.getElementById('faeHospitalName').value = faeState.hospitalName || '';
+      document.getElementById('faeDate').value = faeState.date || '';
+      document.getElementById('faeManager').value = faeState.manager || '';
+    }
+
+    function renderFaeMandatory() {
+      const container = document.getElementById('faeMandatoryList');
+      container.innerHTML = MANDATORY_CONDITIONS.map(m => {
+        const checked = !!faeState.mandatory[m.id];
+        return `
+          <label class="cond-item ${checked ? 'checked' : 'unchecked'}">
+            <input type="checkbox" ${checked ? 'checked' : ''} onchange="toggleMandatory('${m.id}', this.checked)" />
+            <div style="flex:1;">
+              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;align-items:center;">
+                <strong style="font-size:14px;color:var(--text);">${m.title}</strong>
+                <span class="page-tag">${m.page}</span>
+              </div>
+              <p style="font-size:12.5px;color:var(--text-muted);margin-top:3px;">${m.desc}</p>
+            </div>
+          </label>
+        `;
+      }).join('');
+    }
+
+    function toggleMandatory(id, val) {
+      faeState.mandatory[id] = val;
+      saveFaeState();
+      renderFaeMandatory();
+      updateFaeSummaryAndPlan();
+    }
+
+    function renderFaeCritical() {
+      const container = document.getElementById('faeCriticalList');
+      container.innerHTML = CRITICAL_SITUATIONS.map((c, idx) => {
+        const status = faeState.critical[c.id] || 'ok';
+        return `
+          <div class="crit-row ${status === 'alert' ? 'is-alert' : 'is-ok'}">
+            <div style="flex:1;min-width:240px;">
+              <strong style="font-size:13.5px;color:var(--text);">${idx + 1}. ${c.short}</strong>
+              <p style="font-size:12.5px;color:var(--text-muted);margin-top:2px;">${c.text}</p>
+            </div>
+            <div class="crit-toggle">
+              <button class="crit-btn ${status === 'ok' ? 'ok-active' : ''}" onclick="setCriticalStatus('${c.id}','ok')">✓ Sigur / OK</button>
+              <button class="crit-btn ${status === 'alert' ? 'alert-active' : ''}" onclick="setCriticalStatus('${c.id}','alert')">⚠ Risc prezent (ALERTĂ!)</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function setCriticalStatus(id, status) {
+      faeState.critical[id] = status;
+      saveFaeState();
+      renderFaeCritical();
+      updateFaeSummaryAndPlan();
+    }
+
+    function setFaeFilter(ff) {
+      currentFaeFilter = ff;
+      document.querySelectorAll('#faeStdFilters .filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.ff === ff);
+      });
+      renderFaeStandards();
+    }
+
+    function applyOptionalNAPreset() {
+      const optionalCodes = ['02.04', '02.06', '02.07', '02.08'];
+      optionalCodes.forEach(code => {
+        if (!faeState.standards[code]) faeState.standards[code] = {};
+        faeState.standards[code].val = 'NA';
+      });
+      saveFaeState();
+      renderFaeStandards();
+      updateFaeSummaryAndPlan();
+      showToast('Marcat N/A pentru serviciile opționale (02.04, 02.06, 02.07, 02.08).');
+    }
+
+    function setStandardVal(code, val) {
+      if (!faeState.standards[code]) faeState.standards[code] = {};
+      faeState.standards[code].val = (faeState.standards[code].val === val) ? '' : val;
+      saveFaeState();
+      renderFaeStandards();
+      updateFaeSummaryAndPlan();
+    }
+
+    function toggleStandardEM(code, key, checked) {
+      if (!faeState.standards[code]) faeState.standards[code] = {};
+      faeState.standards[code][key] = checked;
+      saveFaeState();
+    }
+
+    function updateStandardField(code, field, value) {
+      if (!faeState.standards[code]) faeState.standards[code] = {};
+      faeState.standards[code][field] = value;
+      saveFaeState();
+      updateFaeSummaryAndPlan();
+    }
+
+    function escapeAttr(str) {
+      return (str || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function renderFaeStandards() {
+      const container = document.getElementById('faeStandardsContainer');
+      const list = STANDARDS.filter(s => {
+        const st = faeState.standards[s.code] || {};
+        if (currentFaeFilter === 'R01') return s.ref === 'R01';
+        if (currentFaeFilter === 'R02') return s.ref === 'R02';
+        if (currentFaeFilter === 'R03') return s.ref === 'R03';
+        if (currentFaeFilter === 'ISSUES') return ['NC', 'DI', 'CP'].includes(st.val);
+        return true;
+      });
+
+      if (!list.length) {
+        container.innerHTML = `<p style="text-align:center;color:var(--text-muted);padding:20px;">Niciun standard în filtrul selectat.</p>`;
+        return;
+      }
+
+      const valOpts = [
+        { k: 'C',  label: 'C · Conform' },
+        { k: 'CP', label: 'CP · Parțial' },
+        { k: 'NC', label: 'NC · Neconform' },
+        { k: 'DI', label: 'DI · Doc. insuf.' },
+        { k: 'NA', label: 'N/A · Neaplicabil' }
+      ];
+
+      container.innerHTML = list.map(s => {
+        const st = faeState.standards[s.code] || {};
+        const v = st.val || '';
+        return `
+          <div class="fae-std-row ${v ? 'val-' + v : ''}">
+            <div class="fae-std-top">
+              <div style="flex:1;min-width:230px;">
+                <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;">
+                  <strong style="font-size:14.5px;color:var(--text);">Std. ${s.code} — ${s.title}</strong>
+                  <span class="page-tag">${s.page}</span>
+                  ${s.badge ? `<span class="badge-chip" style="background:var(--mint);color:var(--teal);">${s.badge}</span>` : ''}
+                </div>
+                <p style="font-size:12.5px;color:var(--text-muted);margin-top:3px;">${s.summary}</p>
+              </div>
+              <div class="val-group">
+                ${valOpts.map(o => `
+                  <button class="val-btn ${v === o.k ? 'active-' + o.k : ''}" onclick="setStandardVal('${s.code}','${o.k}')">${o.label}</button>
+                `).join('')}
+              </div>
+            </div>
+
+            <div class="em-checks">
+              <span style="font-size:11.5px;font-weight:700;color:var(--text-light);">Dimensiuni EM verificate:</span>
+              <label class="em-check-label"><input type="checkbox" ${st.em1 ? 'checked' : ''} onchange="toggleStandardEM('${s.code}','em1',this.checked)" /> EM1 Capacitate</label>
+              <label class="em-check-label"><input type="checkbox" ${st.em2 ? 'checked' : ''} onchange="toggleStandardEM('${s.code}','em2',this.checked)" /> EM2 Implementare</label>
+              <label class="em-check-label"><input type="checkbox" ${st.em3 ? 'checked' : ''} onchange="toggleStandardEM('${s.code}','em3',this.checked)" /> EM3 Rezultate</label>
+              <label class="em-check-label"><input type="checkbox" ${st.em4 ? 'checked' : ''} onchange="toggleStandardEM('${s.code}','em4',this.checked)" /> EM4 Îmbunătățire</label>
+            </div>
+
+            <div class="fae-notes-grid">
+              <input class="fae-mini-input" type="text" placeholder="Observație / Măsură corectivă..." value="${escapeAttr(st.note)}" onchange="updateStandardField('${s.code}','note',this.value)" />
+              <input class="fae-mini-input" type="text" placeholder="Responsabil (ex: Șef secție)" value="${escapeAttr(st.owner)}" onchange="updateStandardField('${s.code}','owner',this.value)" />
+              <input class="fae-mini-input" type="date" value="${escapeAttr(st.due)}" onchange="updateStandardField('${s.code}','due',this.value)" />
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function calcRefScore(refCode) {
+      let pts = 0, applicable = 0;
+      STANDARDS.filter(s => s.ref === refCode).forEach(s => {
+        const v = (faeState.standards[s.code] || {}).val;
+        if (v === 'C')  { pts += 100; applicable++; }
+        else if (v === 'CP') { pts += 50; applicable++; }
+        else if (v === 'NC' || v === 'DI') { applicable++; }
+      });
+      return applicable ? Math.round(pts / applicable) : 0;
+    }
+
+    function updateFaeSummaryAndPlan() {
+      // 1. Condiții obligatorii & Situații critice
+      const mandDone = MANDATORY_CONDITIONS.filter(m => faeState.mandatory[m.id]).length;
+      const mandMissing = MANDATORY_CONDITIONS.length - mandDone;
+      const critAlerts = CRITICAL_SITUATIONS.filter(c => faeState.critical[c.id] === 'alert');
+
+      // 2. Scor orientativ standarde
+      let totalPts = 0, applicableCount = 0, evaluatedCount = 0, ncDiCount = 0, cpCount = 0;
+      STANDARDS.forEach(s => {
+        const v = (faeState.standards[s.code] || {}).val;
+        if (v) evaluatedCount++;
+        if (v === 'C') { totalPts += 100; applicableCount++; }
+        else if (v === 'CP') { totalPts += 50; applicableCount++; cpCount++; }
+        else if (v === 'NC' || v === 'DI') { applicableCount++; ncDiCount++; }
+      });
+
+      const overallScore = applicableCount ? Math.round(totalPts / applicableCount) : 0;
+      const scoreR01 = calcRefScore('R01');
+      const scoreR02 = calcRefScore('R02');
+      const scoreR03 = calcRefScore('R03');
+
+      // Actualizare inel SVG
+      const circumference = 251.2;
+      const offset = circumference - (overallScore / 100) * circumference;
+      const ring = document.getElementById('scoreRingCircle');
+      ring.style.strokeDashoffset = offset;
+      ring.style.stroke = overallScore >= 85 ? '#059669' : overallScore >= 60 ? '#D97706' : '#DC2626';
+      document.getElementById('scoreRingText').textContent = overallScore + '%';
+      document.getElementById('navFaeScore').textContent = overallScore + '%';
+      document.getElementById('evalCountText').textContent = `${evaluatedCount} / 30 standarde evaluate`;
+
+      // Mini-bare R01, R02, R03
+      document.getElementById('barR01Text').textContent = scoreR01 + '%';
+      document.getElementById('barR01Fill').style.width = scoreR01 + '%';
+      document.getElementById('barR02Text').textContent = scoreR02 + '%';
+      document.getElementById('barR02Fill').style.width = scoreR02 + '%';
+      document.getElementById('barR03Text').textContent = scoreR03 + '%';
+      document.getElementById('barR03Fill').style.width = scoreR03 + '%';
+
+      // 3. Plan de Măsuri automat
+      const actions = [];
+      MANDATORY_CONDITIONS.forEach((m, idx) => {
+        if (!faeState.mandatory[m.id]) {
+          actions.push({
+            prio: 'CRITICĂ', prioClass: 'prio-crit', order: 1,
+            code: `Condiție Art. 8/14 (#${idx + 1})`,
+            issue: `Neîndeplinită: ${m.title}`,
+            action: m.action,
+            ownerDue: 'Management / SMCSS — Urgent',
+            page: m.page
+          });
+        }
+      });
+
+      critAlerts.forEach(c => {
+        actions.push({
+          prio: 'CRITICĂ', prioClass: 'prio-crit', order: 1,
+          code: 'Situație Critică Art. 18(27)',
+          issue: `ALERTĂ: ${c.short}`,
+          action: c.action,
+          ownerDue: 'Conducere / Tehnic — Imediat',
+          page: 'Pag. 44'
+        });
+      });
+
+      STANDARDS.forEach(s => {
+        const st = faeState.standards[s.code] || {};
+        if (st.val === 'NC' || st.val === 'DI') {
+          actions.push({
+            prio: 'RIDICATĂ', prioClass: 'prio-high', order: 2,
+            code: `Std. ${s.code} (${st.val})`,
+            issue: `${s.title} — marcat ${st.val === 'NC' ? 'Neconform' : 'Documentat insuficient'}`,
+            action: st.note ? `${st.note} (${s.actionHint})` : s.actionHint,
+            ownerDue: [st.owner || 'Responsabil proces', st.due || 'Termen de stabilit'].join(' · '),
+            page: s.page
+          });
+        } else if (st.val === 'CP') {
+          actions.push({
+            prio: 'MEDIE', prioClass: 'prio-med', order: 3,
+            code: `Std. ${s.code} (CP)`,
+            issue: `${s.title} — Conform parțial`,
+            action: st.note ? `${st.note} (${s.actionHint})` : s.actionHint,
+            ownerDue: [st.owner || 'Responsabil proces', st.due || 'Termen de stabilit'].join(' · '),
+            page: s.page
+          });
+        }
+      });
+
+      actions.sort((a, b) => a.order - b.order);
+
+      // Contoare dashboard
+      const cntMand = document.getElementById('cntMandatory');
+      cntMand.textContent = `Obligatorii: ${mandDone}/5`;
+      cntMand.style.background = mandMissing === 0 ? '#D1FAE5' : '#FEE2E2';
+      cntMand.style.color = mandMissing === 0 ? '#065F46' : '#991B1B';
+
+      const cntCrit = document.getElementById('cntCritical');
+      cntCrit.textContent = `Alerte: ${critAlerts.length}/7`;
+      cntCrit.style.background = critAlerts.length === 0 ? '#D1FAE5' : '#FEE2E2';
+      cntCrit.style.color = critAlerts.length === 0 ? '#065F46' : '#991B1B';
+
+      document.getElementById('cntMeasures').textContent = `Măsuri: ${actions.length}`;
+      document.getElementById('planCountTag').textContent = `${actions.length} măsuri identificate`;
+
+      // 4. Semafor logic
+      const semBox = document.getElementById('semaforBox');
+      const semTitle = document.getElementById('semaforTitle');
+      const semReason = document.getElementById('semaforReason');
+      semBox.className = 'semafor-box';
+
+      if (mandMissing > 0 || critAlerts.length > 0 || (applicableCount > 0 && overallScore < 60)) {
+        semBox.classList.add('semafor-red');
+        semTitle.textContent = 'Risc major / Blocaj la evaluare';
+        const reasons = [];
+        if (mandMissing > 0) reasons.push(`${mandMissing} condiții obligatorii neîndeplinite`);
+        if (critAlerts.length > 0) reasons.push(`${critAlerts.length} alerte critice de siguranță active`);
+        if (applicableCount > 0 && overallScore < 60) reasons.push(`scor orientativ sub 60% (${overallScore}%)`);
+        semReason.textContent = 'Blocaj determinat de: ' + reasons.join('; ') + '.';
+      } else if (applicableCount === 0 || overallScore < 85 || ncDiCount > 0) {
+        semBox.classList.add('semafor-amber');
+        semTitle.textContent = 'Pregătire parțială — necesită măsuri';
+        semReason.textContent = applicableCount === 0
+          ? 'Condițiile obligatorii și siguranța critică sunt OK. Evaluați standardele de la Pasul 3.'
+          : `Condițiile blocante sunt OK, dar există ${ncDiCount} standarde NC/DI și ${cpCount} CP ce necesită măsuri înainte de vizită.`;
+      } else {
+        semBox.classList.add('semafor-green');
+        semTitle.textContent = 'Pregătit pentru evaluare';
+        semReason.textContent = `Toate condițiile obligatorii sunt îndeplinite, 0 alerte critice, 0 standarde NC/DI și scor orientativ ${overallScore}%.`;
+      }
+
+      // 5. Render tabel Plan de Măsuri
+      const tbody = document.getElementById('faeActionPlanBody');
+      if (!actions.length) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="6" style="text-align:center;padding:24px;color:var(--emerald);font-weight:700;">
+              ✓ Excelent! Nu există măsuri corective restante în acest moment.
+            </td>
+          </tr>
+        `;
+      } else {
+        tbody.innerHTML = actions.map(a => `
+          <tr>
+            <td><span class="prio-badge ${a.prioClass}">${a.prio}</span></td>
+            <td><strong>${a.code}</strong></td>
+            <td>${a.issue}</td>
+            <td>${a.action}</td>
+            <td style="font-size:12px;color:var(--text-muted);">${a.ownerDue}</td>
+            <td><span class="page-tag">${a.page}</span></td>
+          </tr>
+        `).join('');
+      }
+    }
+
+    // =========================================================================
+    // 10. ACȚIUNI FAE: DEMO, RESET, EXPORT CSV, PRINT PDF
+    // =========================================================================
+    function loadDemoFae() {
+      const demo = getDefaultFaeState();
+      demo.hospitalName = 'Spitalul Clinic Județean de Urgență „Sf. Andrei” (Exemplu Demo)';
+      demo.manager = 'Dr. Elena Ionescu — Coordonator SMCSS';
+      MANDATORY_CONDITIONS.forEach(m => { demo.mandatory[m.id] = true; });
+      CRITICAL_SITUATIONS.forEach(c => { demo.critical[c.id] = 'ok'; });
+      // Activăm 1 alertă critică realistă pentru a ilustra semaforul și planul de măsuri
+      demo.critical['crit6'] = 'alert';
+
+      const sampleVals = {
+        '01.01': 'C', '01.02': 'C', '01.03': 'CP', '01.04': 'C', '01.05': 'C',
+        '01.06': 'C', '01.07': 'C', '01.08': 'CP', '01.09': 'C', '01.10': 'NC', '01.11': 'DI',
+        '02.01': 'C', '02.02': 'C', '02.03': 'CP', '02.04': 'C', '02.05': 'C',
+        '02.06': 'NA', '02.07': 'NA', '02.08': 'NA', '02.09': 'C', '02.10': 'CP',
+        '02.11': 'C', '02.12': 'C', '02.13': 'C', '02.14': 'NC', '02.15': 'C', '02.16': 'C',
+        '03.01': 'C', '03.02': 'CP', '03.03': 'C'
+      };
+      STANDARDS.forEach(s => {
+        const v = sampleVals[s.code] || 'C';
+        demo.standards[s.code] = {
+          val: v,
+          em1: v !== 'NA',
+          em2: v === 'C' || v === 'CP',
+          em3: v === 'C',
+          em4: v === 'C',
+          note: v === 'NC' ? 'Necesită elaborare și aprobare urgentă în Comitetul Director.'
+              : v === 'DI' ? 'Evidența sistemelor digitale/AI este în curs de centralizare.'
+              : v === 'CP' ? 'Implementat parțial; necesită extindere pe toate secțiile.' : '',
+          owner: v === 'C' || v === 'NA' ? '' : 'SMCSS / Șefi secții',
+          due: v === 'C' || v === 'NA' ? '' : '2026-12-20'
+        };
+      });
+
+      faeState = demo;
+      saveFaeState();
+      syncMetaInputs();
+      renderFaeMandatory();
+      renderFaeCritical();
+      renderFaeStandards();
+      updateFaeSummaryAndPlan();
+      showToast('Exemplul demo a fost încărcat! Vezi Semaforul și Planul de Măsuri.');
+    }
+
+    function openResetModal() {
+      document.getElementById('resetModal').classList.add('open');
+    }
+
+    function closeResetModal() {
+      document.getElementById('resetModal').classList.remove('open');
+    }
+
+    function confirmResetFae() {
+      faeState = getDefaultFaeState();
+      saveFaeState();
+      syncMetaInputs();
+      renderFaeMandatory();
+      renderFaeCritical();
+      renderFaeStandards();
+      updateFaeSummaryAndPlan();
+      closeResetModal();
+      showToast('Fișa de autoevaluare a fost resetată.');
+    }
+
+    function csvCell(val) {
+      const s = String(val || '').replace(/"/g, '""');
+      return `"${s}"`;
+    }
+
+    function exportFaeCSV() {
+      const rows = [
+        ['FIȘĂ AUTOEVALUARE ANMCS EDIȚIA A III-A (M.Of. 808 bis / 2026)'],
+        ['Unitate Sanitară', faeState.hospitalName || 'Nespecificat'],
+        ['Data autoevaluării', faeState.date || ''],
+        ['Responsabil SMCSS', faeState.manager || 'Nespecificat'],
+        [],
+        ['PASUL 1 — CONDIȚII MINIME OBLIGATORII (Art. 8 & Art. 14)'],
+        ['Condiție', 'Status', 'Pagină PDF'],
+        ...MANDATORY_CONDITIONS.map(m => [m.title, faeState.mandatory[m.id] ? 'ÎNDEPLINITĂ' : 'NEÎNDEPLINITĂ (BLOCANT)', m.page]),
+        [],
+        ['PASUL 2 — SITUAȚII CRITICE DE SIGURANȚĂ (Art. 18 alin. 27)'],
+        ['Situație critică', 'Status', 'Pagină PDF'],
+        ...CRITICAL_SITUATIONS.map(c => [c.short, faeState.critical[c.id] === 'alert' ? 'ALERTĂ RISC PREZENT' : 'Sigur / OK', 'Pag. 44']),
+        [],
+        ['PASUL 3 — AUTOEVALUARE CELE 30 DE STANDARDE ANMCS (Anexa 1)'],
+        ['Cod', 'Referință', 'Titlu Standard', 'Valență', 'EM1', 'EM2', 'EM3', 'EM4', 'Observație / Măsură', 'Responsabil', 'Termen', 'Pagină PDF'],
+        ...STANDARDS.map(s => {
+          const st = faeState.standards[s.code] || {};
+          return [
+            s.code, s.ref, s.title, st.val || 'Neevaluat',
+            st.em1 ? 'Da' : 'Nu', st.em2 ? 'Da' : 'Nu', st.em3 ? 'Da' : 'Nu', st.em4 ? 'Da' : 'Nu',
+            st.note || '', st.owner || '', st.due || '', s.page
+          ];
+        })
+      ];
+
+      const csvContent = '\uFEFF' + rows.map(r => r.map(csvCell).join(';')).join('\r\n');
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `FAE_ANMCS_Editia3_${faeState.date || 'raport'}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast('Fișierul CSV (Excel) a fost descărcat!');
+    }
+
+    function printFaeReport() {
+      const meta = `Unitate Sanitară: ${faeState.hospitalName || '________________'} | Data: ${faeState.date || '____-__-__'} | Responsabil SMCSS: ${faeState.manager || '________________'}`;
+      document.getElementById('printMetaLine').textContent = meta;
+      window.print();
+    }
+
+    // =========================================================================
+    // 11. INIȚIALIZARE APLICAȚIE
+    // =========================================================================
+    document.addEventListener('DOMContentLoaded', () => {
+      renderHierarchy();
+      renderStandards();
+      renderStepper();
+      renderTab4();
+      renderPdfMap();
+      renderAcronyms();
+
+      // Inițializare Tab 6 (FAE)
+      syncMetaInputs();
+      renderFaeMandatory();
+      renderFaeCritical();
+      renderFaeStandards();
+      updateFaeSummaryAndPlan();
+
+      // Event listeners
+      document.getElementById('stdSearchInput').addEventListener('input', renderStandards);
+      document.getElementById('acronymSearchInput').addEventListener('input', renderAcronyms);
+
+      document.getElementById('faeHospitalName').addEventListener('input', e => {
+        faeState.hospitalName = e.target.value;
+        saveFaeState();
+      });
+      document.getElementById('faeDate').addEventListener('input', e => {
+        faeState.date = e.target.value;
+        saveFaeState();
+      });
+      document.getElementById('faeManager').addEventListener('input', e => {
+        faeState.manager = e.target.value;
+        saveFaeState();
+      });
+    });
+  </script>
+</body>
+</html>
